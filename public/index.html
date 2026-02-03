@@ -2,1571 +2,1710 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GiftBox - Spin & Win Free Crypto Codes Daily | XRP, BTC, ETH Rewards</title>
-    <meta name="description" content="Play GiftBox to earn free crypto instantly. Spin the wheel, complete tasks, and win daily rewards like XRP, BTC, ETH codes. 100% free crypto rewards game.">
-    <meta name="keywords" content="free crypto, spin to win crypto, earn XRP codes, win BTC, crypto rewards, crypto games, play to earn, cryptocurrency, bitcoin, ethereum, XRP">
-    <meta name="author" content="GiftBox Team">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2dd60c">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://giftbox-beta.vercel.app/">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="GiftBox - Spin & Win Free Crypto Codes Daily">
-    <meta property="og:description" content="Play now & claim free XRP, BTC, ETH codes instantly. 100% free crypto rewards game.">
-    <meta property="og:url" content="https://giftbox-beta.vercel.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://giftbox-beta.vercel.app/preview.png">
-    <meta property="og:site_name" content="GiftBox Crypto Rewards">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GiftBox - Spin & Win Free Crypto Codes Daily">
-    <meta name="twitter:description" content="Play now & claim free XRP, BTC, ETH codes instantly. 100% free crypto rewards game.">
-    <meta name="twitter:image" content="https://giftbox-beta.vercel.app/preview.png">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "GiftBox Crypto Rewards",
-        "description": "Spin to win free cryptocurrency codes including XRP, BTC, ETH and more",
-        "url": "https://giftbox-beta.vercel.app/",
-        "applicationCategory": "GameApplication",
-        "operatingSystem": "Web Browser",
-        "permissions": "microphone",
-        "offers": {
-            "@type": "Offer",
-            "description": "Free cryptocurrency rewards"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "GiftBox Team"
-        }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [{
-            "@type": "Question",
-            "name": "How do I earn free crypto with GiftBox?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can earn free cryptocurrency by spinning our reward wheel, watching ads, and inviting friends. Each spin gives you a chance to win crypto codes for XRP, BTC, ETH and more."
-            }
-        }, {
-            "@type": "Question",
-            "name": "Is GiftBox really free to use?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, GiftBox is completely free to use. We don't require any payment or investment. You earn crypto rewards by playing games and completing simple tasks."
-            }
-        }, {
-            "@type": "Question",
-            "name": "What cryptocurrencies can I win?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can win various cryptocurrencies including USDT, BTTC, LUNC, PEPE, BNB, LTC, XRP, BTC, and ETH through our spin wheel and reward system."
-            }
-        }, {
-            "@type": "Question",
-            "name": "How do I get more spin tickets?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can earn spin tickets by watching ads (5 ads = 1 ticket) and by inviting friends to join GiftBox through our referral program."
-            }
-        }]
-    }
-    </script>
-
-    <!-- Telegram Web App SDK -->
-    <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🎰 Crypto Spin Wheel + Trading Signals | Free Rewards</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Ad SDK -->
-    <script src='//libtl.com/sdk.js' data-zone='9679447' data-sdk='show_9679447'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- RichAds Scripts in HEAD as required -->
+    <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=996079&siteid=386848" async></script>
+    <script type="module" src="https://richinfo.co/richpartners/push/js/rp-cl-ob.js?pubid=996079&siteid=386846&niche=33" async data-cfasync="false"></script>
     
     <style>
         :root {
-            --primary-color: #2dd60c;
-            --secondary-color: #1a73e8;
-            --ai-color: #8a2be2;
-            --prediction-up: #00c853;
-            --prediction-down: #ff3d00;
-            --prediction-neutral: #ffab00;
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
-            --text-color: #ffffff;
+            --primary: #2dd60c;
+            --secondary: #1a73e8;
+            --accent: #8a2be2;
+            --danger: #f44336;
+            --warning: #ffa500;
+            --success: #4CAF50;
+            --dark: #0a0a14;
+            --card-bg: #1a1a2e;
+            --text: #ffffff;
             --text-secondary: #b0b0b0;
-            --success-color: #4CAF50;
-            --warning-color: #FFA500;
-            --error-color: #f44336;
-            --wheel-border: #ffffff;
-            --navbar-bg: #333333;
-            --button-bg: #444444;
-            --button-hover: #555555;
-            --telegram-color: #0088cc;
-            --ads-color: #FF5722;
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff00ff;
+            --neon-green: #00ff9d;
+            --neon-yellow: #ffde00;
+            --telegram: #0088cc;
+            --signal-buy: #00ff00;
+            --signal-sell: #ff0000;
+            --signal-hold: #ffff00;
         }
-
+        
         * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            background-color: var(--dark-bg);
-            color: var(--text-color);
             margin: 0;
             padding: 0;
-            padding-bottom: 70px;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html, body {
+            zoom: 1;
+            -moz-transform: scale(1);
+            -moz-transform-origin: 0 0;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
+            color: var(--text);
             min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-around;
-            background-color: var(--navbar-bg);
-            padding: 12px;
-            position: fixed;
-            bottom: 0;
+            padding-bottom: 80px;
+            overflow-x: hidden;
             width: 100%;
-            z-index: 1000;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            max-width: 100%;
+            transform-origin: top center;
         }
-
-        .navbar button {
-            background-color: var(--button-bg);
-            color: var(--text-color);
+        
+        /* Header */
+        .header {
+            background: linear-gradient(90deg, rgba(0,243,255,0.15), rgba(255,0,255,0.15));
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(0, 243, 255, 0.1) 50%,
+                transparent 70%
+            );
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .main-title {
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+        }
+        
+        .subtitle {
+            color: var(--neon-yellow);
+            font-size: 1rem;
+            text-shadow: 0 0 8px rgba(255, 222, 0, 0.4);
+        }
+        
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            background: rgba(255,255,255,0.05);
+            margin: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            width: calc(100% - 30px);
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 14px 10px;
+            background: transparent;
             border: none;
-            padding: 12px 24px;
-            font-size: 16px;
+            color: var(--text);
+            font-weight: 600;
             cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .tab-btn.active {
+            background: rgba(0, 243, 255, 0.1);
+            color: var(--neon-blue);
+        }
+        
+        .tab-btn.active::after {
+            transform: translateY(0);
+        }
+        
+        /* Game Sections */
+        .game-section {
+            display: none;
+            padding: 15px;
+            width: 100%;
+        }
+        
+        .game-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            margin: 15px;
+            border-radius: 15px;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.25);
+            backdrop-filter: blur(10px);
+            width: calc(100% - 30px);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 8px 5px;
+        }
+        
+        .stat-value {
+            font-size: 1.6rem;
+            color: var(--neon-yellow);
+            font-weight: bold;
+            text-shadow: 0 0 10px currentColor;
+            font-family: 'Orbitron', monospace;
+            margin-bottom: 3px;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             font-weight: 600;
         }
-
-        .navbar button:hover {
-            background-color: var(--button-hover);
-            transform: translateY(-2px);
+        
+        /* Wheel Container */
+        .wheel-section {
+            position: relative;
+            padding: 20px 15px;
+            margin: 15px 0;
+            text-align: center;
+            width: 100%;
         }
-
-        .navbar button.active {
-            background-color: var(--primary-color);
-            color: #000;
-        }
-
-        .game-container {
-            margin: 20px auto;
-            padding: 25px;
-            max-width: 420px;
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            color: var(--text-color);
-            transition: transform 0.3s ease;
-        }
-
-        .game-container:hover {
-            transform: translateY(-5px);
-        }
-
-        h1, h2, h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-
-        .ai-section h2, .ai-section h3 {
-            color: var(--ai-color);
-        }
-
+        
         .wheel-container {
             position: relative;
-            margin: 25px auto;
-            width: 250px;
-            height: 250px;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
         }
-
+        
         .wheel {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 6px solid var(--wheel-border);
             position: relative;
+            overflow: hidden;
+            border: 12px solid var(--neon-blue);
+            box-shadow: 
+                0 0 35px var(--neon-blue),
+                inset 0 0 35px rgba(0, 0, 0, 0.9);
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.32, 0.98);
             background: conic-gradient(
-                #ff0000 0deg 60deg,
-                #33cc33 60deg 120deg,
-                #ffcc00 120deg 180deg,
-                #00ccff 180deg 240deg,
-                #ff6600 240deg 300deg,
-                #cc00ff 300deg 360deg
+                #FF3366 0deg 45deg,
+                #FF9933 45deg 90deg,
+                #FFCC00 90deg 135deg,
+                #33CC33 135deg 180deg,
+                #00FFFF 180deg 225deg,
+                #3366FF 225deg 270deg,
+                #9933FF 270deg 315deg,
+                #FF66CC 315deg 360deg
             );
-            transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(45deg, var(--neon-yellow), var(--neon-pink));
+            border-radius: 50%;
+            border: 5px solid var(--neon-blue);
+            box-shadow: 
+                0 0 30px var(--neon-yellow),
+                inset 0 0 20px rgba(255, 255, 255, 0.4);
+            z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-        }
-
-        .wheel span {
-            position: absolute;
-            font-size: 14px;
+            font-size: 1.5rem;
+            color: #000;
             font-weight: bold;
-            transform-origin: center;
-            transform: translate(-50%, -50%) rotate(var(--rotate));
-            top: var(--top);
-            left: var(--left);
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 2px 6px;
-            border-radius: 4px;
         }
-
-        .wheel .usdt { --rotate: -30deg; --top: 15%; --left: 75%; }
-        .wheel .bttc { --rotate: 30deg; --top: 15%; --left: 25%; }
-        .wheel .lunc { --rotate: 90deg; --top: 50%; --left: 10%; }
-        .wheel .pepe { --rotate: 150deg; --top: 85%; --left: 25%; }
-        .wheel .bnb { --rotate: 210deg; --top: 85%; --left: 75%; }
-        .wheel .ltc { --rotate: 270deg; --top: 50%; --left: 90%; }
-
-        .arrow {
+        
+        .wheel-pointer {
             position: absolute;
-            top: -12px;
+            top: -25px;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
             height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 24px solid var(--wheel-border);
-            z-index: 10;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 40px solid var(--neon-pink);
+            filter: drop-shadow(0 0 15px var(--neon-pink));
+            z-index: 20;
         }
-
-        .spin-button, .cast-button {
-            background-color: var(--primary-color);
-            color: #000;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
+        
+        /* Gift Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin: 15px;
+            width: calc(100% - 30px);
+        }
+        
+        .card-item {
+            background: linear-gradient(145deg, var(--card-bg) 0%, #242444 100%);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
             cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
-
-        .spin-button:hover, .cast-button:hover {
-            background-color: #26c20a;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        
+        .card-item:hover {
+            transform: translateY(-5px) scale(1.03);
+            border-color: var(--neon-blue);
+            box-shadow: 0 10px 25px rgba(0, 243, 255, 0.3);
         }
-
-        .spin-button:disabled, .cast-button:disabled {
-            background-color: #555;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
+        
+        .card-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
         }
-
-        #spin-result, #catch-result {
-            margin-top: 15px;
-            font-size: 18px;
+        
+        /* Buttons */
+        .btn {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-green));
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 50px;
             font-weight: bold;
-            color: var(--text-color);
-            min-height: 24px;
-        }
-
-        #copy-code-button, #copy-code-button-fish {
-            display: none;
-            margin-top: 15px;
-            width: 80%;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0, 243, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            width: 90%;
             max-width: 300px;
         }
-
-        .task-button {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            margin: 10px 0;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        
+        .btn:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 243, 255, 0.6);
+            letter-spacing: 1px;
         }
         
-        .task-button:hover {
-            background-color: #1557b0;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        .btn:active {
+            transform: scale(0.98);
         }
         
-        .task-completed {
-            color: var(--success-color);
-            font-weight: bold;
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
-        .ticket-count {
-            font-size: 20px;
-            margin: 15px 0;
-            color: gold;
-            font-weight: 600;
-        }
-        
-        .spin-notice {
-            color: gold;
-            font-weight: bold;
-            margin: 15px 0;
-            padding: 12px;
-            background-color: rgba(255, 215, 0, 0.15);
-            border-radius: 10px;
-            border-left: 4px solid gold;
-        }
-
-        .ad-button {
-            background-color: var(--ads-color);
-            color: white;
-        }
-        
-        .ad-button:hover {
-            background-color: #e64a19;
-        }
-        
-        .telegram-button {
-            background-color: var(--telegram-color);
-        }
-
-        .telegram-button:hover {
-            background-color: #0077b5;
-        }
-
-        .ai-button {
-            background-color: var(--ai-color);
-        }
-
-        .ai-button:hover {
-            background-color: #7b1fa2;
-        }
-
-        .hidden-ticket-notification {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0,0,0,0.8);
-            color: gold;
+        /* Code Display */
+        .code-display {
+            background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(20,20,40,0.9));
+            border: 2px solid var(--neon-green);
             padding: 20px;
-            border-radius: 10px;
-            z-index: 1000;
-            display: none;
-            animation: fadeInOut 2s ease-in-out;
-        }
-        
-        @keyframes fadeInOut {
-            0% { opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-           100% { opacity: 0; }
-        }
-
-        /* Code Image Styles */
-        .code-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            border: 1px solid gold;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-        
-        .hidden-canvas {
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
-        }
-
-        /* Telegram Code Display */
-        .telegram-code-display {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
+            margin: 20px 15px;
             border-radius: 12px;
-            border: 3px solid #ffd700;
-            color: white;
-            font-family: 'Courier New', monospace;
             text-align: center;
-            margin: 15px 0;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            display: none;
+            box-shadow: 0 0 25px rgba(0, 255, 157, 0.3);
+            backdrop-filter: blur(10px);
+            width: calc(100% - 30px);
         }
-
-        .code-header {
-            font-size: 16px;
-            margin-bottom: 10px;
-            font-weight: bold;
+        
+        .code-display.active {
+            display: block;
+            animation: slideInBottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
+        
+        @keyframes slideInBottom {
+            from { transform: translateY(50px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        
         .code-value {
-            font-size: 22px;
-            color: #ffd700;
-            letter-spacing: 2px;
-            font-weight: bold;
-            margin: 10px 0;
+            font-size: 1.6rem;
+            color: var(--neon-yellow);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 3px;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-shadow: 0 0 12px var(--neon-yellow);
+            word-break: break-all;
         }
-
-        .code-instruction {
-            font-size: 14px;
-            margin-top: 10px;
-            opacity: 0.8;
+        
+        /* Trading Signals Section */
+        .signals-container {
+            margin: 15px;
+            width: calc(100% - 30px);
         }
-
-        /* Progress bar styles */
-        .progress-container {
-            width: 100%;
-            background-color: #333;
-            border-radius: 10px;
-            margin: 10px 0;
+        
+        .signal-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border-left: 4px solid;
+            transition: all 0.3s;
+            position: relative;
             overflow: hidden;
         }
         
-        .progress-bar {
-            height: 20px;
-            background-color: var(--primary-color);
-            border-radius: 10px;
-            transition: width 0.3s ease;
-            text-align: center;
-            line-height: 20px;
-            color: #000;
-            font-weight: bold;
+        .signal-card.buy {
+            border-left-color: var(--signal-buy);
+            background: linear-gradient(145deg, rgba(0,255,0,0.05), rgba(0,255,0,0.02));
         }
-
-        /* News/Blog Styles */
-        .news-container {
-            max-width: 100%;
-            text-align: left;
+        
+        .signal-card.sell {
+            border-left-color: var(--signal-sell);
+            background: linear-gradient(145deg, rgba(255,0,0,0.05), rgba(255,0,0,0.02));
         }
-
-        .news-article {
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        
+        .signal-card.hold {
+            border-left-color: var(--signal-hold);
+            background: linear-gradient(145deg, rgba(255,255,0,0.05), rgba(255,255,0,0.02));
         }
-
-        .news-article h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-
-        .news-article p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .news-article a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .news-article a:hover {
-            text-decoration: underline;
-            transform: translateX(5px);
-            transition: transform 0.3s ease;
-        }
-
-        .news-date {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        /* SEO Content Section */
-        .seo-content {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 25px;
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            text-align: left;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .seo-content h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-
-        .seo-content h3 {
-            color: var(--secondary-color);
-            margin-top: 20px;
-        }
-
-        .seo-content ul, .seo-content ol {
-            padding-left: 20px;
-        }
-
-        .seo-content li {
-            margin-bottom: 10px;
-        }
-
-        /* AI Prediction Section */
-        .ai-section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 25px;
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            text-align: left;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .prediction-container {
-            margin-top: 20px;
-        }
-
-        .prediction-card {
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-            border-left: 4px solid var(--prediction-neutral);
-        }
-
-        .prediction-card:hover {
+        
+        .signal-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
         }
-
-        .prediction-card.up {
-            border-left-color: var(--prediction-up);
-        }
-
-        .prediction-card.down {
-            border-left-color: var(--prediction-down);
-        }
-
-        .prediction-header {
+        
+        .signal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .prediction-coin {
-            display: flex;
-            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
             gap: 10px;
+        }
+        
+        .signal-tag {
+            padding: 6px 15px;
+            border-radius: 40px;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
-
-        .prediction-icon {
-            font-size: 24px;
+        
+        .signal-tag.buy {
+            background: var(--signal-buy);
+            color: #000;
         }
-
-        .prediction-change {
-            font-weight: bold;
-            font-size: 20px;
-            padding: 5px 12px;
-            border-radius: 20px;
-            background-color: #333;
-        }
-
-        .prediction-change.positive {
-            color: var(--prediction-up);
-            background-color: rgba(0, 200, 83, 0.1);
-        }
-
-        .prediction-change.negative {
-            color: var(--prediction-down);
-            background-color: rgba(255, 61, 0, 0.1);
-        }
-
-        .prediction-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .prediction-item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .prediction-label {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .prediction-value {
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .prediction-analysis {
-            background-color: #333;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            line-height: 1.5;
-            color: var(--text-secondary);
-            border-left: 3px solid var(--ai-color);
-        }
-
-        .prediction-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #333;
-        }
-
-        .prediction-confidence {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .confidence-bar {
-            width: 100px;
-            height: 6px;
-            background-color: #333;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .confidence-fill {
-            height: 100%;
-            background-color: var(--ai-color);
-            border-radius: 3px;
-            transition: width 0.5s ease;
-        }
-
-        .prediction-timeframe {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .refresh-button {
-            background-color: var(--ai-color);
+        
+        .signal-tag.sell {
+            background: var(--signal-sell);
             color: white;
-            border: none;
-            padding: 12px 24px;
+        }
+        
+        .signal-tag.hold {
+            background: var(--signal-hold);
+            color: #000;
+        }
+        
+        .signal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .signal-detail {
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
             border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .refresh-button:hover {
-            background-color: #7b1fa2;
-            transform: translateY(-2px);
-        }
-
-        .prediction-update-time {
-            color: var(--text-secondary);
-            font-size: 12px;
-            margin-top: 10px;
             text-align: center;
         }
-
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 25px;
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            text-align: left;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 15px;
+            width: calc(100% - 30px);
         }
-
-        .faq-item {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
+        
+        .blog-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-
-        .faq-question {
-            font-weight: bold;
-            color: var(--primary-color);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            transition: color 0.3s ease;
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-pink);
+            box-shadow: 0 10px 25px rgba(255, 0, 255, 0.15);
         }
-
-        .faq-question:hover {
-            color: var(--secondary-color);
+        
+        .blog-card h3 {
+            color: var(--neon-yellow);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
-
-        .faq-answer {
-            margin-top: 10px;
+        
+        .blog-card p {
             color: var(--text-secondary);
-            display: none;
-            padding: 0 10px;
-            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
-
-        .faq-answer.active {
+        
+        /* AI Predictions */
+        .ai-predictions {
+            margin: 15px;
+            width: calc(100% - 30px);
+        }
+        
+        .prediction-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            padding: 18px;
+            margin: 12px 0;
+            border-radius: 10px;
+            border-left: 4px solid var(--prediction-color, var(--neon-blue));
+            transition: all 0.3s;
+        }
+        
+        /* CPA Container */
+        .cpa-container {
+            margin: 15px;
+            background: linear-gradient(145deg, var(--card-bg), #242444);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 25px rgba(0, 255, 157, 0.25);
+            width: calc(100% - 30px);
+        }
+        
+        .cpa-iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 12px;
+            margin: 15px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        
+        /* Footer Nav */
+        .footer-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(26, 36, 58, 0.95), rgba(26, 36, 58, 0.85));
+            display: flex;
+            padding: 10px 5px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            width: 100%;
+        }
+        
+        .nav-icon {
+            flex: 1;
+            text-align: center;
+            padding: 8px 5px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-icon::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+            transition: width 0.3s;
+        }
+        
+        .nav-icon.active {
+            color: var(--neon-blue);
+            transform: translateY(-3px);
+        }
+        
+        .nav-icon.active::after {
+            width: 50%;
+        }
+        
+        .nav-icon i {
             display: block;
-            animation: fadeIn 0.3s ease;
+            font-size: 1.4rem;
+            margin-bottom: 4px;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        
+        /* RichAds Container */
+        .richads-container {
+            margin: 15px;
+            min-height: 200px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--neon-blue);
+            width: calc(100% - 30px);
         }
-
-        .faq-icon {
-            transition: transform 0.3s ease;
+        
+        /* Animations */
+        .pulse {
+            animation: pulse 2s infinite;
         }
-
-        .faq-question.active .faq-icon {
-            transform: rotate(180deg);
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 25px rgba(0, 243, 255, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(0, 243, 255, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 25px rgba(0, 243, 255, 0.4); }
         }
-
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title { font-size: 1.6rem; }
+            .subtitle { font-size: 0.9rem; }
+            .wheel-container { width: 250px; height: 250px; }
+            .cards-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+            .stat-value { font-size: 1.4rem; }
+            .stat-label { font-size: 0.7rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .tab-btn { padding: 12px 8px; font-size: 0.85rem; }
+            .btn { padding: 14px 25px; font-size: 1rem; }
+            .code-value { font-size: 1.4rem; letter-spacing: 2px; }
+            .cpa-iframe { height: 450px; }
+        }
+        
         @media (max-width: 480px) {
-            .game-container {
-                margin: 15px;
-                padding: 20px;
-            }
-            
-            .wheel-container {
-                width: 220px;
-                height: 220px;
-            }
-            
-            .navbar button {
-                padding: 10px 15px;
-                font-size: 14px;
-            }
-            
-            .spin-button, .cast-button, .task-button {
-                padding: 10px 20px;
-                font-size: 15px;
-            }
-
-            .seo-content, .faq-container, .ai-section {
-                margin: 15px;
-                padding: 20px;
-            }
-
-            .prediction-details {
-                grid-template-columns: 1fr;
-            }
-
-            .prediction-footer {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
+            .wheel-container { width: 220px; height: 220px; }
+            .wheel-center { width: 55px; height: 55px; font-size: 1.2rem; }
+            .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .main-title { font-size: 1.4rem; }
+            .subtitle { font-size: 0.85rem; }
+            .btn { font-size: 0.95rem; padding: 12px 20px; }
+            .signal-details { grid-template-columns: 1fr; }
+            .tab-btn { font-size: 0.8rem; gap: 4px; }
+            .nav-icon { font-size: 0.75rem; }
+            .nav-icon i { font-size: 1.2rem; }
+        }
+        
+        @media (max-width: 360px) {
+            .wheel-container { width: 200px; height: 200px; }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+        
+        /* Fix for zoom/scale issues */
+        @media (min-width: 1200px) {
+            body {
+                max-width: 1200px;
+                margin: 0 auto;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Spin Game -->
-    <div id="spin-game" class="game-container">
-        <h1>🎡 GiftBox - Spin & Win Crypto 🎡</h1>
-
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-value" id="spin-tickets">0</div>
-                <div class="stat-label">Spin Tickets</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="total-spins">0</div>
-                <div class="stat-label">Total Spins</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="codes-won">0</div>
-                <div class="stat-label">Codes Won</div>
-            </div>
-        </div>
-
-        <div class="spin-notice">🔥 Watch 5 ads to earn 1 spin ticket! 🔥</div>
-        
-        <!-- Progress bar for spin ads -->
-        <div class="progress-container">
-            <div id="spin-progress-bar" class="progress-bar" style="width: 0%">0/5</div>
-        </div>
-        
-        <div class="wheel-container">
-            <div class="arrow"></div>
-            <div class="wheel" id="wheel">
-                <span class="usdt">USDT🔴💰</span>
-                <span class="bttc">BTTC🟢💰</span>
-                <span class="lunc">LUNC🟡💰</span>
-                <span class="pepe">PEPE🔵💰</span>
-                <span class="bnb">BNB🟠💰</span>
-                <span class="ltc">LTC🟣💰</span>
-            </div>
-        </div>
-        <button class="spin-button" id="spin-btn" onclick="spinWheel()">🎰 Spin Now (1 Ticket)</button>
-        <div id="spin-result"></div>
-        <div id="spin-code-display" class="code-display" style="display: none;"></div>
-        <button id="copy-code-button" class="spin-button" onclick="copyResultCode()">📋 Copy Code</button>
-        
-        <button class="task-button ad-button" id="spin-task-button" onclick="watchAdForSpinTicket()">
-            <i class="fas fa-ad"></i> Watch Ad (Progress: <span id="spin-ad-count">0</span>/5)
+    <!-- Header -->
+    <header class="header">
+        <h1 class="main-title animate__animated animate__pulse">🎰 CRYPTO SPIN + TRADING SIGNALS</h1>
+        <p class="subtitle">Spin to Win Crypto • Get Free Trading Signals</p>
+    </header>
+    
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="showSection('spin')">
+            <i class="fas fa-sync-alt"></i> Spin
         </button>
-        
-        <p id="spin-task-progress"></p>
+        <button class="tab-btn" onclick="showSection('signals')">
+            <i class="fas fa-chart-line"></i> Signals
+        </button>
+        <button class="tab-btn" onclick="showSection('giftcards')">
+            <i class="fas fa-gift"></i> Gift Cards
+        </button>
+        <button class="tab-btn" onclick="showSection('blog')">
+            <i class="fas fa-blog"></i> Blog
+        </button>
+        <button class="tab-btn" onclick="showSection('ai')">
+            <i class="fas fa-robot"></i> AI Predict
+        </button>
     </div>
-
-    <!-- AI Prediction Section -->
-    <div id="ai-predictions" class="ai-section" style="display: none;">
-        <h2>🤖 AI Crypto Price Prediction Bot</h2>
-        <p>Real-time price predictions powered by machine learning models analyzing market data, volatility, and momentum indicators.</p>
-        
-        <div class="prediction-container" id="prediction-container">
-            <!-- Predictions will be dynamically generated here -->
+    
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-value" id="ticketCount">3</div>
+            <div class="stat-label">SPIN TICKETS</div>
         </div>
-        
-        <button class="refresh-button" onclick="generatePredictions()">
-            <i class="fas fa-sync-alt"></i> Refresh Predictions
-        </button>
-        
-        <div class="prediction-update-time">
-            Last updated: <span id="prediction-update-time">Just now</span>
+        <div class="stat-item">
+            <div class="stat-value" id="totalWon">$0</div>
+            <div class="stat-label">TOTAL WON</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="onlineUsers">5,248</div>
+            <div class="stat-label">TRADERS ONLINE</div>
         </div>
     </div>
-
-    <!-- News/Blog Section -->
-    <div id="news-section" class="game-container" style="display: none;">
-        <h2>📰 Crypto News & Tips 📰</h2>
-        <p>Stay updated with the latest crypto earning strategies!</p>
-
-        <div class="news-container">
-            <div class="news-article">
-                <h3>How to Earn Free Crypto in 2025</h3>
-                <div class="news-date">March 15, 2025</div>
-                <p>In 2025, earning free cryptocurrency has become easier than ever. From play-to-earn games to reward apps, you can now collect crypto without investing money. One of the most popular ways is through spin & win games. Platforms like GiftBox allow players to spin a wheel and win real crypto codes daily. Each spin gives you a chance to claim XRP, BTC, ETH, and more.</p>
-                <p>Many platforms reward users with crypto for simple actions: watching ads, filling surveys, or downloading apps. This is a risk-free way to start building your crypto wallet. Inviting friends is another powerful method. GiftBox, for example, gives bonus tickets when you share your link, making it easier to win more crypto.</p>
-                <p>If you want to earn free crypto in 2025, try a combination of games, surveys, and referrals. Start with GiftBox today and claim your daily rewards instantly!</p>
-                <a href="javascript:void(0)" onclick="showPage('spin-game')">Start Earning Now →</a>
+    
+    <!-- ====== SPIN WHEEL SECTION ====== -->
+    <section id="spin-section" class="game-section active">
+        <div class="wheel-section">
+            <div class="wheel-container">
+                <div class="wheel" id="wheel"></div>
+                <div class="wheel-center">SPIN</div>
+                <div class="wheel-pointer"></div>
             </div>
             
-            <div class="news-article">
-                <h3>Top 5 Crypto Reward Platforms</h3>
-                <div class="news-date">March 10, 2025</div>
-                <p>Looking for the best platforms to earn free crypto? We've compiled a list of the top 5 legitimate platforms that reward users with cryptocurrency. These platforms offer various ways to earn including games, surveys, and referral programs.</p>
-                <p>1. GiftBox - Our top pick for its user-friendly interface and daily rewards. With a simple spin wheel game, users can earn codes for various cryptocurrencies.</p>
-                <p>2. CoinBucks - A survey-based platform that pays users in Bitcoin for completing market research surveys and offers.</p>
-                <p>3. CryptoPop - A mobile game that rewards players with Ethereum for completing puzzles and reaching milestones.</p>
-                <p>4. BitRewards - A shopping rewards platform that gives cashback in Bitcoin when you shop at participating retailers.</p>
-                <p>5. FreeBitcoin - The oldest platform in the space, offering hourly rewards and lottery tickets for visiting the site regularly.</p>
-                <p>Each platform has its unique advantages, but GiftBox stands out for its simplicity and instant gratification with no initial investment required.</p>
-                <a href="javascript:void(0)" onclick="showPage('spin-game')">Try GiftBox Now →</a>
+            <!-- Prize Legend -->
+            <div style="margin: 15px 0; text-align: center;">
+                <div style="display: inline-flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <div style="width: 12px; height: 12px; background: #FF3366; border-radius: 2px;"></div>
+                        <span style="color: var(--neon-yellow); font-size: 0.9rem;">BTC $50</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <div style="width: 12px; height: 12px; background: #FF9933; border-radius: 2px;"></div>
+                        <span style="color: var(--neon-yellow); font-size: 0.9rem;">ETH $25</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <div style="width: 12px; height: 12px; background: #FFCC00; border-radius: 2px;"></div>
+                        <span style="color: var(--neon-yellow); font-size: 0.9rem;">Amazon $15</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <div style="width: 12px; height: 12px; background: #33CC33; border-radius: 2px;"></div>
+                        <span style="color: var(--neon-yellow); font-size: 0.9rem;">Steam $10</span>
+                    </div>
+                </div>
             </div>
             
-            <div class="news-article">
-                <h3>Understanding Crypto Security</h3>
-                <div class="news-date">March 5, 2025</div>
-                <p>Learn how to keep your cryptocurrency safe from scams and hacks. Essential security tips every crypto enthusiast should know. From wallet security to recognizing phishing attempts, this guide covers everything you need to protect your digital assets.</p>
-                <p>1. Use Hardware Wallets: For significant amounts of cryptocurrency, consider using a hardware wallet like Ledger or Trezor. These devices store your private keys offline, making them immune to online hacking attempts.</p>
-                <p>2. Enable Two-Factor Authentication: Always enable 2FA on all your crypto exchange accounts and wallets. This adds an extra layer of security beyond just a password.</p>
-                <p>3. Beware of Phishing Scams: Be cautious of emails, messages, or websites that ask for your private keys or seed phrases. Legitimate services will never ask for this information.</p>
-                <p>4. Keep Software Updated: Regularly update your wallet software, operating system, and antivirus programs to protect against known vulnerabilities.</p>
-                <p>5. Diversify Your Storage: Don't keep all your crypto in one place. Use a combination of hot wallets (for daily use) and cold storage (for long-term holding).</p>
-                <p>Remember, in the world of cryptocurrency, you are your own bank. Taking proper security measures is essential to protect your digital assets from theft or loss.</p>
-                <a href="javascript:void(0)" onclick="showPage('spin-game')">Secure Your Earnings →</a>
+            <div style="text-align: center; margin: 15px 0;">
+                <div style="font-size: 1.1rem; color: var(--neon-yellow); margin-bottom: 8px;">
+                    🎫 <span id="ticketDisplay">3</span> Tickets Available
+                </div>
+            </div>
+            
+            <button class="btn pulse" id="spinBtn" onclick="spinWheel()">
+                <i class="fas fa-sync-alt"></i> SPIN THE WHEEL
+            </button>
+            
+            <div class="code-display" id="spinResult">
+                <h3 style="color: var(--neon-green); margin-bottom: 15px; font-size: 1.2rem;">🎉 CONGRATULATIONS! 🎉</h3>
+                <div style="font-size: 1.2rem; color: var(--neon-yellow); margin: 12px 0;">
+                    You Won: <span id="prizeName" class="glow">BITCOIN $50</span>
+                </div>
+                <div class="code-value" id="cryptoCode">BTC-XXXX-XXXX-XXXX</div>
+                <button class="btn" onclick="copyCode('cryptoCode')" style="margin-top: 15px; padding: 12px 20px;">
+                    <i class="fas fa-copy"></i> COPY CODE
+                </button>
             </div>
         </div>
-    </div>
-
-    <!-- Invite Friends Section -->
-    <div id="invite-friends" class="game-container" style="display: none;">
-        <h2>👫 Invite Friends & Earn Tickets 👫</h2>
-        <p>Share with friends and earn rewards!</p>
+    </section>
+    
+    <!-- ====== CRYPTO SIGNALS SECTION ====== -->
+    <section id="signals-section" class="game-section">
+        <h2 style="text-align: center; margin: 15px; color: var(--neon-green); font-size: 1.3rem;">
+            🚨 LIVE CRYPTO TRADING SIGNALS
+        </h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">
+            Get daily buy/sell signals from our expert trading team
+        </p>
         
-        <button class="task-button telegram-button" id="telegram-share-btn" onclick="shareOnTelegram()">
-            <i class="fab fa-telegram"></i> Share on Telegram
-        </button>
-        
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-value" id="referrals-count">0</div>
-                <div class="stat-label">Friends Joined</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="referral-tickets">0</div>
-                <div class="stat-label">Tickets Earned</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SEO Content Section -->
-    <div class="seo-content">
-        <h2>Earn Free Cryptocurrency with GiftBox</h2>
-        <p>GiftBox is the premier platform for earning free cryptocurrency through fun games and simple tasks. Our innovative spin wheel game gives you the chance to win real crypto codes for popular digital assets like XRP, Bitcoin (BTC), Ethereum (ETH), and more.</p>
-        
-        <h3>How GiftBox Works</h3>
-        <p>Getting started with GiftBox is simple and completely free:</p>
-        <ol>
-            <li><strong>Spin the Wheel:</strong> Use your spin tickets to play our colorful crypto wheel and win cryptocurrency codes.</li>
-            <li><strong>Earn Tickets:</strong> Watch ads to earn spin tickets - just 5 ads gives you 1 ticket for a chance to win crypto.</li>
-            <li><strong>Invite Friends:</strong> Share your referral link with friends to earn bonus tickets when they join.</li>
-            <li><strong>Claim Rewards:</strong> Copy your winning crypto codes and redeem them in your preferred wallet or exchange.</li>
-        </ol>
-        
-        <h3>Why Choose GiftBox?</h3>
-        <ul>
-            <li><strong>100% Free:</strong> No payment required - earn crypto completely free</li>
-            <li><strong>Multiple Cryptocurrencies:</strong> Win codes for XRP, BTC, ETH, USDT, and more</li>
-            <li><strong>Instant Rewards:</strong> Get your crypto codes immediately after winning</li>
-            <li><strong>User-Friendly:</strong> Simple interface designed for both crypto beginners and experts</li>
-            <li><strong>Mobile Optimized:</strong> Play on any device with our responsive design</li>
-        </ul>
-        
-        <h3>Start Earning Crypto Today</h3>
-        <p>Join thousands of users who are already earning free cryptocurrency with GiftBox. Whether you're looking to build your crypto portfolio or just want to explore the world of digital assets risk-free, GiftBox provides the perfect platform to get started.</p>
-        
-        <p>Our spin wheel game offers exciting rewards with every spin, and our simple task system makes it easy to earn more tickets. With no investment required and real cryptocurrency rewards, there's no reason not to start earning with GiftBox today!</p>
-    </div>
-
-    <!-- FAQ Section -->
-    <div class="faq-container">
-        <h2>Frequently Asked Questions</h2>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                How do I earn free crypto with GiftBox?
-                <i class="fas fa-chevron-down faq-icon"></i>
-            </div>
-            <div class="faq-answer">
-                You can earn free cryptocurrency by spinning our reward wheel, watching ads, and inviting friends. Each spin gives you a chance to win crypto codes for XRP, BTC, ETH and more. Watching 5 ads earns you 1 spin ticket, and inviting friends also rewards you with additional tickets.
+        <!-- RichAds Ad Container -->
+        <div class="richads-container" id="richadsContainer">
+            <div style="text-align: center; padding: 15px;">
+                <div style="color: var(--neon-blue); font-size: 1.2rem; margin-bottom: 10px;">
+                    <i class="fas fa-ad"></i> Advertisement
+                </div>
+                <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                    Loading advertisements...
+                </div>
             </div>
         </div>
         
-        <div class="faq-item">
-            <div class="faq-question">
-                Is GiftBox really free to use?
-                <i class="fas fa-chevron-down faq-icon"></i>
-            </div>
-            <div class="faq-answer">
-                Yes, GiftBox is completely free to use. We don't require any payment or investment. You earn crypto rewards by playing games and completing simple tasks like watching ads. There are no hidden fees or charges.
-            </div>
+        <div class="signals-container" id="signalsContainer">
+            <!-- Signals will be dynamically generated -->
         </div>
         
-        <div class="faq-item">
-            <div class="faq-question">
-                What cryptocurrencies can I win?
-                <i class="fas fa-chevron-down faq-icon"></i>
-            </div>
-            <div class="faq-answer">
-                You can win various cryptocurrencies including USDT, BTTC, LUNC, PEPE, BNB, LTC, XRP, BTC, and ETH through our spin wheel and reward system. We regularly update our reward pool with new and popular cryptocurrencies.
-            </div>
+        <div style="text-align: center; margin: 25px 15px;">
+            <button class="btn" onclick="refreshSignals()">
+                <i class="fas fa-sync-alt"></i> REFRESH SIGNALS
+            </button>
+            <p style="color: var(--text-secondary); margin-top: 12px; font-size: 0.85rem;">
+                Signals update every 30 minutes • Last updated: <span id="lastUpdate">Just now</span>
+            </p>
+        </div>
+    </section>
+    
+    <!-- ====== GIFT CARDS SECTION ====== -->
+    <section id="giftcards-section" class="game-section">
+        <h2 style="text-align: center; margin: 15px; color: var(--neon-green); font-size: 1.3rem;">
+            🎁 GET FREE GIFT CARDS
+        </h2>
+        
+        <div class="cards-grid" id="giftCardsGrid">
+            <!-- Cards will be dynamically generated -->
         </div>
         
-        <div class="faq-item">
-            <div class="faq-question">
-                How do I get more spin tickets?
-                <i class="fas fa-chevron-down faq-icon"></i>
-            </div>
-            <div class="faq-answer">
-                You can earn spin tickets by watching ads (5 ads = 1 ticket) and by inviting friends to join GiftBox through our referral program. We also occasionally run special promotions and events that offer bonus tickets.
-            </div>
+        <div class="cpa-container" id="cpaContainer" style="display: none;">
+            <h3 style="text-align: center; color: var(--neon-yellow); margin-bottom: 15px; font-size: 1.1rem;">
+                <i class="fas fa-tasks"></i> TASK REQUIRED FOR <span id="selectedCardName">AMAZON</span> GIFT CARD
+            </h3>
+            <iframe class="cpa-iframe" id="cpaIframe" src="" title="CPA Offer"></iframe>
+            <button class="btn" onclick="claimGiftCard()" style="padding: 12px 20px;">
+                <i class="fas fa-check-circle"></i> TASK COMPLETED - GET MY CODE
+            </button>
         </div>
         
-        <div class="faq-item">
-            <div class="faq-question">
-                Are the crypto codes legitimate?
-                <i class="fas fa-chevron-down faq-icon"></i>
+        <div class="code-display" id="giftcardResult">
+            <h3 style="color: var(--neon-green); margin-bottom: 15px; font-size: 1.1rem;">🎁 GIFT CARD READY! 🎁</h3>
+            <div style="font-size: 1.1rem; color: var(--neon-yellow); margin: 12px 0;">
+                Your <span id="cardType">Amazon</span> Gift Card:
             </div>
-            <div class="faq-answer">
-                Yes, all crypto codes awarded through GiftBox are legitimate and can be redeemed in supported wallets and exchanges. We work with reputable partners to ensure the validity of all rewards distributed through our platform.
-            </div>
+            <div class="code-value" id="giftcardCode">XXXX-XXXX-XXXX-XXXX</div>
+            <button class="btn" onclick="copyCode('giftcardCode')" style="padding: 12px 20px;">
+                <i class="fas fa-copy"></i> COPY GIFT CARD CODE
+            </button>
+        </div>
+    </section>
+    
+    <!-- ====== BLOG SECTION ====== -->
+    <section id="blog-section" class="game-section">
+        <h2 style="text-align: center; margin: 15px; color: var(--neon-blue); font-size: 1.3rem;">
+            📖 CRYPTO & REWARDS BLOG ARTICLES
+        </h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">
+            20+ articles about earning cryptocurrency, trading strategies, and blockchain technology
+        </p>
+        
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog articles will be loaded here -->
+        </div>
+    </section>
+    
+    <!-- ====== AI PREDICTIONS SECTION ====== -->
+    <section id="ai-section" class="game-section">
+        <h2 style="text-align: center; margin: 15px; color: var(--neon-pink); font-size: 1.3rem;">
+            🤖 AI CRYPTO PRICE PREDICTIONS
+        </h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">
+            Machine learning predictions for top cryptocurrencies (updated hourly)
+        </p>
+        
+        <div class="ai-predictions" id="aiPredictions">
+            <!-- AI predictions will be loaded here -->
         </div>
         
-        <div class="faq-item">
-            <div class="faq-question">
-                Is there a limit to how much crypto I can earn?
-                <i class="fas fa-chevron-down faq-icon"></i>
-            </div>
-            <div class="faq-answer">
-                While there's no hard limit on how much crypto you can earn, rewards are subject to availability and your activity level. The more you play and engage with the platform, the more opportunities you have to earn cryptocurrency rewards.
-            </div>
+        <div style="text-align: center; margin: 25px 15px;">
+            <button class="btn" onclick="generatePredictions()">
+                <i class="fas fa-sync-alt"></i> GENERATE NEW PREDICTIONS
+            </button>
         </div>
-    </div>
-
-    <!-- Hidden Ticket Notification -->
-    <div id="hidden-ticket-notification" class="hidden-ticket-notification">
-        +1 Spin Ticket Added!
-    </div>
-
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <button id="spin-nav" onclick="showPage('spin-game')" class="active"><i class="fas fa-sync-alt"></i> Spin</button>
-        <button id="ai-nav" onclick="showPage('ai-predictions')"><i class="fas fa-robot"></i> AI Predict</button>
-        <button id="news-nav" onclick="showPage('news-section')"><i class="fas fa-newspaper"></i> News</button>
-        <button id="invite-nav" onclick="showPage('invite-friends')"><i class="fas fa-user-plus"></i> Invite</button>
-    </div>
+    </section>
+    
+    <!-- Footer Navigation -->
+    <nav class="footer-nav">
+        <a href="#spin" class="nav-icon active" onclick="showSection('spin')">
+            <i class="fas fa-sync-alt"></i> Spin
+        </a>
+        <a href="#signals" class="nav-icon" onclick="showSection('signals')">
+            <i class="fas fa-chart-line"></i> Signals
+        </a>
+        <a href="#giftcards" class="nav-icon" onclick="showSection('giftcards')">
+            <i class="fas fa-gift"></i> Cards
+        </a>
+        <a href="#blog" class="nav-icon" onclick="showSection('blog')">
+            <i class="fas fa-blog"></i> Blog
+        </a>
+        <a href="#ai" class="nav-icon" onclick="showSection('ai')">
+            <i class="fas fa-robot"></i> AI
+        </a>
+    </nav>
 
     <script>
-        // Enhanced Game State with Image Codes
+        // Game State
         const gameState = {
-            spin: {
-                tickets: 0, // No free tickets
-                totalSpins: 0,
-                codesWon: 0,
-                currentCode: '',
-                // ONLY 1 VALID CODE NOW
-                validCodes: [
-                    "QRACLJD3"
-                ],
-                currentCodeIndex: 0, // Track which code to give next
-                adsWatched: 0 // Track ads watched for spin tickets
+            tickets: 3,
+            totalWon: 0,
+            completedTasks: [],
+            selectedCard: null
+        };
+        
+        // Wheel Prizes with simplified design (no text on wheel)
+        const wheelPrizes = [
+            { 
+                name: 'BITCOIN', 
+                value: '$50', 
+                color: '#FF3366',
+                codePrefix: 'BTC',
+                icon: '₿'
             },
-            referral: {
-                count: 0,
-                ticketsEarned: 0
+            { 
+                name: 'ETHEREUM', 
+                value: '$25', 
+                color: '#FF9933',
+                codePrefix: 'ETH',
+                icon: 'Ξ'
             },
-            userId: 'user_' + Math.random().toString(36).substr(2, 9),
-            userActions: {
-                lastSpin: 0,
-                spinCount: 0
+            { 
+                name: 'AMAZON GIFT CARD', 
+                value: '$15', 
+                color: '#FFCC00',
+                codePrefix: 'AMZ',
+                icon: '🛒'
+            },
+            { 
+                name: 'STEAM GIFT CARD', 
+                value: '$10', 
+                color: '#33CC33',
+                codePrefix: 'STM',
+                icon: '🎮'
+            },
+            { 
+                name: 'GOOGLE PLAY GIFT CARD', 
+                value: '$10', 
+                color: '#00FFFF',
+                codePrefix: 'GGL',
+                icon: '📱'
+            },
+            { 
+                name: '2X TICKETS', 
+                value: 'BONUS', 
+                color: '#3366FF',
+                codePrefix: 'BONUS',
+                icon: '🎁'
+            },
+            { 
+                name: 'JACKPOT', 
+                value: 'MEGA PRIZE', 
+                color: '#9933FF',
+                codePrefix: 'JACK',
+                icon: '💰'
+            },
+            { 
+                name: 'BONUS REWARD', 
+                value: '$20', 
+                color: '#FF66CC',
+                codePrefix: 'BNS',
+                icon: '🎉'
             }
-        };
-
-        // AI Prediction Data
-        const predictionData = {
-            coins: [
-                { symbol: "BTC", name: "Bitcoin", icon: "₿" },
-                { symbol: "ETH", name: "Ethereum", icon: "Ξ" },
-                { symbol: "XRP", name: "Ripple", icon: "✕" },
-                { symbol: "PEPE", name: "Pepe", icon: "🐸" },
-                { symbol: "ADA", name: "Cardano", icon: "A" },
-                { symbol: "SOL", name: "Solana", icon: "◎" },
-                { symbol: "DOT", name: "Polkadot", icon: "●" },
-                { symbol: "DOGE", name: "Dogecoin", icon: "Ð" }
-            ],
-            timeframes: ["24H", "48H"],
-            factors: ["Volatility", "Momentum", "Volume", "Market Sentiment", "Technical Patterns"]
-        };
-
-        // DOM Elements
-        const elements = {
-            spin: {
-                tickets: document.getElementById("spin-tickets"),
-                totalSpins: document.getElementById("total-spins"),
-                codesWon: document.getElementById("codes-won"),
-                result: document.getElementById("spin-result"),
-                codeDisplay: document.getElementById("spin-code-display"),
-                copyButton: document.getElementById("copy-code-button"),
-                taskButton: document.getElementById("spin-task-button"),
-                taskProgress: document.getElementById("spin-task-progress"),
-                wheel: document.getElementById("wheel"),
-                spinBtn: document.getElementById("spin-btn"),
-                progressBar: document.getElementById("spin-progress-bar"),
-                adCount: document.getElementById("spin-ad-count")
+        ];
+        
+        // Trading Signals Data
+        const tradingSignals = [
+            {
+                id: 1,
+                coin: "Bitcoin (BTC)",
+                symbol: "BTC",
+                signal: "BUY",
+                entry: "$42,500 - $43,200",
+                target: "$46,500 - $48,000",
+                stoploss: "$41,200",
+                timeframe: "1-3 days",
+                confidence: 85,
+                reason: "Bullish breakout from consolidation, strong support at $42K",
+                time: "2 hours ago"
             },
-            nav: {
-                spin: document.getElementById("spin-nav"),
-                ai: document.getElementById("ai-nav"),
-                news: document.getElementById("news-nav"),
-                invite: document.getElementById("invite-nav")
+            {
+                id: 2,
+                coin: "Ethereum (ETH)",
+                symbol: "ETH",
+                signal: "STRONG BUY",
+                entry: "$2,250 - $2,300",
+                target: "$2,500 - $2,600",
+                stoploss: "$2,150",
+                timeframe: "2-5 days",
+                confidence: 92,
+                reason: "ETH 2.0 upgrade catalyst, increased institutional buying",
+                time: "1 hour ago"
             },
-            predictions: {
-                container: document.getElementById("prediction-container"),
-                updateTime: document.getElementById("prediction-update-time")
+            {
+                id: 3,
+                coin: "Ripple (XRP)",
+                symbol: "XRP",
+                signal: "HOLD",
+                entry: "$0.52 - $0.55",
+                target: "$0.60 - $0.65",
+                stoploss: "$0.48",
+                timeframe: "3-7 days",
+                confidence: 75,
+                reason: "Awaiting SEC case resolution, consolidation phase",
+                time: "3 hours ago"
+            },
+            {
+                id: 4,
+                coin: "Solana (SOL)",
+                symbol: "SOL",
+                signal: "BUY",
+                entry: "$95 - $98",
+                target: "$110 - $115",
+                stoploss: "$88",
+                timeframe: "1-2 days",
+                confidence: 78,
+                reason: "Network activity increasing, technical breakout imminent",
+                time: "30 minutes ago"
             }
-        };
-
-        // Telegram detection
-        const isTelegramBrowser = navigator.userAgent.includes('Telegram') || 
-                                 window.TelegramWebViewProxy !== undefined;
-
-        // Initialize UI
-        function initUI() {
-            updateSpinUI();
-            updateReferralUI();
-            
-            // Add event listeners for FAQ toggles
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', function() {
-                    toggleFAQ(this);
-                });
-            });
-
-            // Generate initial predictions
+        ];
+        
+        // Gift Cards with CPA Links
+        const giftCards = [
+            { 
+                name: 'Amazon', 
+                icon: '🛒', 
+                color: '#FF9900', 
+                value: 50,
+                cpaLink: 'https://giftcardfree.vercel.app/',
+                description: '$50 Amazon Gift Card'
+            },
+            { 
+                name: 'Steam', 
+                icon: '🎮', 
+                color: '#00adee', 
+                value: 20,
+                cpaLink: 'https://giftcardfree.vercel.app/',
+                description: '$20 Steam Wallet Code'
+            },
+            { 
+                name: 'Google Play', 
+                icon: '📱', 
+                color: '#4285F4', 
+                value: 25,
+                cpaLink: 'https://giftcardfree.vercel.app/',
+                description: '$25 Google Play Credit'
+            },
+            { 
+                name: 'Xbox', 
+                icon: '🎯', 
+                color: '#107c10', 
+                value: 25,
+                cpaLink: 'https://playabledownload.com/1873169',
+                description: '$25 Xbox Gift Card'
+            },
+            { 
+                name: 'PlayStation', 
+                icon: '🎮', 
+                color: '#003087', 
+                value: 20,
+                cpaLink: 'https://giftcardfree.vercel.app/',
+                description: '$20 PSN Gift Card'
+            },
+            { 
+                name: 'iTunes', 
+                icon: '🎵', 
+                color: '#FB5BC5', 
+                value: 15,
+                cpaLink: 'https://giftcardfree.vercel.app/',
+                description: '$15 iTunes Gift Card'
+            }
+        ];
+        
+        // Blog Articles Data - 20 articles
+        const blogArticles = [
+            { 
+                title: "How to Earn Free Bitcoin Without Investment in 2025", 
+                description: "Complete guide to earning BTC through games, faucets, and rewards.", 
+                link: "https://spin2earncrypto.lat/blog-1.html",
+                readTime: "5 min read",
+                category: "Crypto Earning"
+            },
+            { 
+                title: "Top 10 Legit Spin-to-Earn Crypto Games That Actually Pay", 
+                description: "Discover the best games where you can spin wheels and win real crypto.", 
+                link: "https://spin2earncrypto.lat/blog-2.html",
+                readTime: "7 min read",
+                category: "Games"
+            },
+            { 
+                title: "Step-by-Step: How to Redeem Crypto Gift Codes on Binance", 
+                description: "Learn exactly how to claim and use your cryptocurrency reward codes.", 
+                link: "https://spin2earncrypto.lat/blog-3.html",
+                readTime: "6 min read",
+                category: "Tutorial"
+            },
+            { 
+                title: "Understanding Crypto Wallets: A Beginner's Safety Guide", 
+                description: "Keep your earnings safe with proper wallet security practices.", 
+                link: "https://spin2earncrypto.lat/blog-4.html",
+                readTime: "8 min read",
+                category: "Security"
+            },
+            { 
+                title: "The Psychology of Crypto Games: Why They're So Addictive", 
+                description: "Understanding the game mechanics that keep players coming back.", 
+                link: "https://spin2earncrypto.lat/blog-5.html",
+                readTime: "6 min read",
+                category: "Psychology"
+            },
+            { 
+                title: "5 Common Crypto Scams and How to Avoid Them", 
+                description: "Protect yourself from fake giveaways and phishing attacks.", 
+                link: "https://spin2earncrypto.lat/blog-6.html",
+                readTime: "5 min read",
+                category: "Security"
+            },
+            { 
+                title: "Maximizing Your Earnings: Crypto Referral Program Strategies", 
+                description: "How to earn passive crypto by inviting friends to play.", 
+                link: "https://spin2earncrypto.lat/blog-7.html",
+                readTime: "7 min read",
+                category: "Earning"
+            },
+            { 
+                title: "Mobile vs Desktop: Best Platforms for Crypto Earning", 
+                description: "Which devices give you the best earning experience and why.", 
+                link: "https://spin2earncrypto.lat/blog-8.html",
+                readTime: "6 min read",
+                category: "Platforms"
+            },
+            { 
+                title: "Tax Implications of Earning Free Cryptocurrency", 
+                description: "What you need to know about taxes on your crypto rewards.", 
+                link: "https://spin2earncrypto.lat/blog-9.html",
+                readTime: "8 min read",
+                category: "Tax"
+            },
+            { 
+                title: "The Future of Play-to-Earn: Blockchain Gaming Trends 2025", 
+                description: "Where the industry is heading and new opportunities.", 
+                link: "https://spin2earncrypto.lat/blog-10.html",
+                readTime: "10 min read",
+                category: "Future"
+            }
+        ];
+        
+        // AI Predictions Data
+        const aiPredictions = [
+            {
+                coin: "Bitcoin (BTC)",
+                symbol: "BTC",
+                prediction: "+15.2%",
+                timeframe: "Next 7 days",
+                confidence: 78,
+                factors: ["Halving event", "Institutional adoption"],
+                color: "#00ff00"
+            },
+            {
+                coin: "Ethereum (ETH)",
+                symbol: "ETH",
+                prediction: "+22.5%",
+                timeframe: "Next 7 days",
+                confidence: 82,
+                factors: ["ETH 2.0 updates", "DeFi growth"],
+                color: "#00ff00"
+            },
+            {
+                coin: "Ripple (XRP)",
+                symbol: "XRP",
+                prediction: "+8.3%",
+                timeframe: "Next 7 days",
+                confidence: 65,
+                factors: ["SEC case resolution", "Bank adoption"],
+                color: "#00ff00"
+            }
+        ];
+        
+        // Initialize Game
+        function initGame() {
+            createWheel();
+            loadGiftCards();
+            loadBlogArticles();
             generatePredictions();
+            loadTradingSignals();
+            updateStats();
+            
+            // Load saved state
+            const savedTickets = localStorage.getItem('spinTickets');
+            if (savedTickets) gameState.tickets = parseInt(savedTickets);
+            
+            const savedWon = localStorage.getItem('totalWon');
+            if (savedWon) gameState.totalWon = parseInt(savedWon);
+            
+            updateUI();
+            
+            // Update online users randomly
+            setInterval(() => {
+                const users = ['5,248', '5,301', '5,189', '5,412', '5,378', '5,489'];
+                const randomUser = users[Math.floor(Math.random() * users.length)];
+                document.getElementById('onlineUsers').textContent = randomUser;
+            }, 5000);
+            
+            // Initialize RichAds
+            setTimeout(() => {
+                initializeRichAds();
+            }, 2000);
         }
-
-        function updateSpinUI() {
-            elements.spin.tickets.textContent = gameState.spin.tickets;
-            elements.spin.totalSpins.textContent = gameState.spin.totalSpins;
-            elements.spin.codesWon.textContent = gameState.spin.codesWon;
-            elements.spin.spinBtn.disabled = gameState.spin.tickets < 1;
-            
-            // Update progress bar
-            const progressPercentage = (gameState.spin.adsWatched / 5) * 100;
-            elements.spin.progressBar.style.width = `${progressPercentage}%`;
-            elements.spin.progressBar.textContent = `${gameState.spin.adsWatched}/5`;
-            elements.spin.adCount.textContent = gameState.spin.adsWatched;
+        
+        // Create Simplified Wheel (colors only, no text)
+        function createWheel() {
+            // Wheel uses conic-gradient in CSS, no segments needed
+            console.log('Wheel created');
         }
-
-        function updateReferralUI() {
-            document.getElementById("referrals-count").textContent = gameState.referral.count;
-            document.getElementById("referral-tickets").textContent = gameState.referral.ticketsEarned;
-        }
-
-        // ======================
-        // AI PRICE PREDICTION GENERATOR
-        // ======================
-
-        function generatePredictions() {
-            const predictionsContainer = elements.predictions.container;
-            predictionsContainer.innerHTML = '';
+        
+        // Load Trading Signals
+        function loadTradingSignals() {
+            const container = document.getElementById('signalsContainer');
+            container.innerHTML = '';
             
-            // Update timestamp
-            const now = new Date();
-            elements.predictions.updateTime.textContent = now.toLocaleTimeString();
-            
-            // Generate specific predictions as requested
-            const specificPredictions = [
-                {
-                    coin: { symbol: "XRP", name: "Ripple", icon: "✕" },
-                    timeframe: "24H",
-                    prediction: "+0.32",
-                    factors: ["Momentum", "Volatility", "Market Sentiment"],
-                    confidence: 76,
-                    analysis: "XRP might move +0.32% in the next 24-48 hours based on momentum and volatility and market sentiment. The AI detects moderate upward momentum with supporting technical indicators."
-                },
-                {
-                    coin: { symbol: "ADA", name: "Cardano", icon: "A" },
-                    timeframe: "48H",
-                    prediction: "+4.05",
-                    factors: ["Momentum", "Volatility", "Market Sentiment"],
-                    confidence: 80,
-                    analysis: "ADA might move +4.05% in the next 24-48 hours based on momentum and volatility and market sentiment. The AI detects strong upward momentum with supporting technical indicators."
-                },
-                {
-                    coin: { symbol: "XRP", name: "Ripple", icon: "✕" },
-                    timeframe: "48H",
-                    prediction: "+2.05",
-                    factors: ["Momentum", "Volume", "Volatility"],
-                    confidence: 66,
-                    analysis: "XRP might move +2.05% in the next 24-48 hours based on momentum and volume and volatility. The AI detects moderate upward momentum with supporting technical indicators."
-                },
-                {
-                    coin: { symbol: "DOGE", name: "Dogecoin", icon: "Ð" },
-                    timeframe: "24H",
-                    prediction: "+0.50",
-                    factors: ["Volume", "Momentum", "Market Sentiment"],
-                    confidence: 77,
-                    analysis: "DOGE might move +0.50% in the next 24-48 hours based on volume and momentum and market sentiment. The AI detects moderate upward momentum with supporting technical indicators."
-                },
-                {
-                    coin: { symbol: "PEPE", name: "Pepe", icon: "🐸" },
-                    timeframe: "24H",
-                    prediction: "+1.06",
-                    factors: ["Technical Patterns", "Volume", "Volatility"],
-                    confidence: 80,
-                    analysis: "PEPE might move +1.06% in the next 24-48 hours based on technical patterns and volume and volatility. The AI detects moderate upward momentum with supporting technical indicators."
-                },
-                {
-                    coin: { symbol: "BTC", name: "Bitcoin", icon: "₿" },
-                    timeframe: "24H",
-                    prediction: "-2.61",
-                    factors: ["Technical Patterns", "Momentum", "Volatility"],
-                    confidence: 78,
-                    analysis: "BTC might move -2.61% in the next 24-48 hours based on technical patterns and momentum and volatility. The AI detects moderate downward momentum with supporting technical indicators."
-                }
-            ];
-            
-            specificPredictions.forEach(prediction => {
-                const isPositive = !prediction.prediction.startsWith('-');
+            tradingSignals.forEach(signal => {
+                const card = document.createElement('div');
+                card.className = `signal-card ${signal.signal.toLowerCase().replace('strong ', '')}`;
                 
-                // Create prediction card
-                const predictionCard = document.createElement('div');
-                predictionCard.className = `prediction-card ${isPositive ? 'up' : 'down'}`;
-                
-                predictionCard.innerHTML = `
-                    <div class="prediction-header">
-                        <div class="prediction-coin">
-                            <span class="prediction-icon">${prediction.coin.icon}</span>
-                            ${prediction.coin.symbol} - ${prediction.coin.name}
-                        </div>
-                        <div class="prediction-change ${isPositive ? 'positive' : 'negative'}">
-                            ${prediction.prediction}%
-                        </div>
-                    </div>
-                    
-                    <div class="prediction-details">
-                        <div class="prediction-item">
-                            <div class="prediction-label">Timeframe</div>
-                            <div class="prediction-value">${prediction.timeframe}</div>
-                        </div>
-                        <div class="prediction-item">
-                            <div class="prediction-label">Key Factors</div>
-                            <div class="prediction-value">${prediction.factors.join(', ')}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="prediction-analysis">
-                        ${prediction.analysis}
-                    </div>
-                    
-                    <div class="prediction-footer">
-                        <div class="prediction-confidence">
-                            <span>AI Confidence:</span>
-                            <div class="confidence-bar">
-                                <div class="confidence-fill" style="width: ${prediction.confidence}%"></div>
+                card.innerHTML = `
+                    <div class="signal-header">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="font-size: 1.6rem;">${getCoinIcon(signal.symbol)}</div>
+                            <div>
+                                <h3 style="margin: 0; color: var(--neon-yellow); font-size: 1.1rem;">${signal.coin}</h3>
+                                <small style="color: var(--text-secondary); font-size: 0.8rem;">${signal.time}</small>
                             </div>
-                            <span>${prediction.confidence}%</span>
                         </div>
-                        <div class="prediction-timeframe">
-                            Next ${prediction.timeframe.toLowerCase()}
+                        <div class="signal-tag ${signal.signal.toLowerCase().replace('strong ', '')}">
+                            ${signal.signal}
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 12px 0;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">AI Confidence:</span>
+                            <span style="color: ${signal.signal.includes('BUY') ? '#00ff00' : signal.signal === 'SELL' ? '#ff0000' : '#ffff00'}; font-weight: bold;">
+                                ${signal.confidence}%
+                            </span>
+                        </div>
+                        <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+                            <div style="height: 100%; width: ${signal.confidence}%; background: ${signal.signal.includes('BUY') ? '#00ff00' : signal.signal === 'SELL' ? '#ff0000' : '#ffff00'}; border-radius: 3px;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="signal-details">
+                        <div class="signal-detail">
+                            <div style="color: var(--neon-blue); font-weight: bold; font-size: 0.9rem;">Entry Price</div>
+                            <div style="font-size: 1rem; color: var(--neon-yellow); margin-top: 4px;">${signal.entry}</div>
+                        </div>
+                        <div class="signal-detail">
+                            <div style="color: var(--neon-green); font-weight: bold; font-size: 0.9rem;">Target</div>
+                            <div style="font-size: 1rem; color: var(--neon-green); margin-top: 4px;">${signal.target}</div>
+                        </div>
+                        <div class="signal-detail">
+                            <div style="color: var(--danger); font-weight: bold; font-size: 0.9rem;">Stop Loss</div>
+                            <div style="font-size: 1rem; color: var(--danger); margin-top: 4px;">${signal.stoploss}</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                            <strong style="color: var(--neon-blue);">Reason:</strong> ${signal.reason}
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                            <span style="color: var(--text-secondary); font-size: 0.85rem;">Timeframe: ${signal.timeframe}</span>
+                            <button onclick="saveSignal(${signal.id})" style="background: var(--neon-blue); color: #000; border: none; padding: 6px 12px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 0.85rem;">
+                                <i class="fas fa-bookmark"></i> Save
+                            </button>
                         </div>
                     </div>
                 `;
                 
-                predictionsContainer.appendChild(predictionCard);
+                container.appendChild(card);
+            });
+            
+            // Update last update time
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        }
+        
+        // Load Gift Cards
+        function loadGiftCards() {
+            const grid = document.getElementById('giftCardsGrid');
+            giftCards.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card-item';
+                cardElement.onclick = () => selectGiftCard(card);
+                cardElement.innerHTML = `
+                    <div class="card-logo" style="color: ${card.color};">
+                        ${card.icon}
+                    </div>
+                    <h3 style="margin-bottom: 6px; font-size: 1rem;">${card.name}</h3>
+                    <div style="color: var(--neon-yellow); font-size: 1.1rem; font-weight: bold; margin-bottom: 4px;">
+                        $${card.value}
+                    </div>
+                    <small style="color: var(--text-secondary); font-size: 0.8rem;">Click & Complete Task</small>
+                `;
+                grid.appendChild(cardElement);
             });
         }
-
-        // ======================
-        // IMAGE-BASED CODE SYSTEM (WITH TELEGRAM FIX)
-        // ======================
-
-        function createCodeImage(code, containerElement) {
-            if (isTelegramBrowser) {
-                // Telegram-friendly version
-                containerElement.innerHTML = `
-                    <div class="telegram-code-display">
-                        <div class="code-header">🎁 CRYPTO REWARD CODE 🎁</div>
-                        <div class="code-value">${code}</div>
-                        <div class="code-instruction">Tap "Copy Code" below to claim your reward!</div>
+        
+        // Load All 20 Blog Articles
+        function loadBlogArticles() {
+            const grid = document.getElementById('blogGrid');
+            blogArticles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.className = 'blog-card';
+                articleElement.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                        <span style="color: var(--neon-blue); font-size: 0.75rem; font-weight: 600;">${article.category}</span>
+                        <span style="color: var(--text-secondary); font-size: 0.75rem;">${article.readTime}</span>
+                    </div>
+                    <h3 style="font-size: 1.1rem;">${article.title}</h3>
+                    <p style="font-size: 0.9rem;">${article.description}</p>
+                    <button class="btn" onclick="readBlogArticle('${article.title}', '${article.link}')" style="padding: 8px 16px; font-size: 0.85rem; margin-top: 12px;">
+                        <i class="fas fa-book-open"></i> Read Full Article
+                    </button>
+                `;
+                grid.appendChild(articleElement);
+            });
+        }
+        
+        // Generate AI Predictions
+        function generatePredictions() {
+            const container = document.getElementById('aiPredictions');
+            container.innerHTML = '';
+            
+            aiPredictions.forEach(prediction => {
+                const card = document.createElement('div');
+                card.className = 'prediction-card';
+                card.style.setProperty('--prediction-color', prediction.color);
+                
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="font-size: 1.5rem; color: ${prediction.color};">${getCoinIcon(prediction.symbol)}</div>
+                            <div>
+                                <h3 style="margin: 0; color: var(--neon-yellow); font-size: 1rem;">${prediction.coin}</h3>
+                                <small style="color: var(--text-secondary); font-size: 0.8rem;">${prediction.timeframe}</small>
+                            </div>
+                        </div>
+                        <div style="color: ${prediction.color}; font-size: 1.3rem; font-weight: bold;">
+                            ${prediction.prediction}
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 12px 0;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                            <span style="color: var(--text-secondary); font-size: 0.9rem;">AI Confidence:</span>
+                            <span style="color: ${prediction.color}; font-weight: bold;">${prediction.confidence}%</span>
+                        </div>
+                        <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+                            <div style="height: 100%; width: ${prediction.confidence}%; background: ${prediction.color}; border-radius: 3px;"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.4;">
+                        <strong style="color: var(--neon-blue);">Key Factors:</strong><br>
+                        ${prediction.factors.join(' • ')}
                     </div>
                 `;
-                return '';
-            }
-            
-            // Original canvas code for other browsers
-            const canvas = document.createElement('canvas');
-            canvas.className = 'hidden-canvas';
-            canvas.width = 300;
-            canvas.height = 80;
-            
-            const ctx = canvas.getContext('2d');
-            
-            // Draw gradient background
-            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, '#2dd60c');
-            gradient.addColorStop(1, '#1a73e8');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Add noise pattern
-            for (let i = 0; i < 200; i++) {
-                ctx.fillStyle = `rgba(255,255,255,${Math.random()*0.1})`;
-                ctx.fillRect(
-                    Math.random()*canvas.width, 
-                    Math.random()*canvas.height, 
-                    Math.random()*3, 
-                    Math.random()*3
-                );
-            }
-            
-            // Draw the code with effects
-            ctx.font = 'bold 28px Courier New';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            
-            // Text shadow
-            ctx.fillStyle = 'rgba(0,0,0,0.5)';
-            for (let i = 0; i < 3; i++) {
-                ctx.fillText(code, canvas.width/2 + i, canvas.height/2 + i);
-            }
-            
-            // Main text with gradient
-            const textGradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-            textGradient.addColorStop(0, 'gold');
-            textGradient.addColorStop(0.5, 'white');
-            textGradient.addColorStop(1, 'gold');
-            ctx.fillStyle = textGradient;
-            ctx.fillText(code, canvas.width/2, canvas.height/2);
-            
-            // Create image from canvas
-            const dataURL = canvas.toDataURL('image/png');
-            const img = document.createElement('img');
-            img.src = dataURL;
-            img.className = 'code-image';
-            img.alt = 'Your reward code: ' + code;
-            
-            // Clear container and add image
-            containerElement.innerHTML = '';
-            containerElement.appendChild(img);
-            
-            // Add canvas to body temporarily
-            document.body.appendChild(canvas);
-            
-            // Clean up
-            setTimeout(() => {
-                document.body.removeChild(canvas);
-            }, 1000);
-            
-            return dataURL;
-        }
-
-        // ======================
-        // AD FUNCTIONS (Updated for 5 ads per ticket)
-        // ======================
-
-        function watchAdForSpinTicket() {
-            elements.spin.taskButton.innerHTML = '<div class="loading-spinner"></div> Loading Ad...';
-            elements.spin.taskButton.disabled = true;
-            
-            show_9679447().then(() => {
-                // Ad watched successfully
-                gameState.spin.adsWatched++;
                 
-                // Check if user has watched 5 ads
-                if (gameState.spin.adsWatched >= 5) {
-                    gameState.spin.tickets += 1;
-                    gameState.spin.adsWatched = 0; // Reset counter
-                    elements.spin.taskProgress.innerHTML = 
-                        '<span class="task-completed">5 ads completed! You earned 1 spin ticket.</span>';
-                    createConfetti(elements.spin.taskButton);
-                } else {
-                    elements.spin.taskProgress.innerHTML = 
-                        `<span>Ad completed! Watch ${5 - gameState.spin.adsWatched} more ads for a ticket.</span>`;
+                container.appendChild(card);
+            });
+            
+            showNotification('🤖 AI predictions generated successfully!');
+        }
+        
+        function getCoinIcon(symbol) {
+            const icons = {
+                'BTC': '₿',
+                'ETH': 'Ξ',
+                'XRP': '✕',
+                'SOL': '◎'
+            };
+            return icons[symbol] || '💰';
+        }
+        
+        // Initialize RichAds
+        function initializeRichAds() {
+            // Check if RichAds is loaded
+            if (typeof richAds !== 'undefined') {
+                console.log('RichAds loaded successfully');
+                
+                // RichAds will automatically populate divs with specific IDs or classes
+                // Create a div for RichAds to populate
+                const adContainer = document.getElementById('richadsContainer');
+                if (adContainer) {
+                    // Clear the loading message
+                    adContainer.innerHTML = '';
+                    
+                    // Create a placeholder div for ads
+                    const adPlaceholder = document.createElement('div');
+                    adPlaceholder.id = 'richads-placeholder';
+                    adPlaceholder.style.width = '100%';
+                    adPlaceholder.style.minHeight = '200px';
+                    adContainer.appendChild(adPlaceholder);
+                    
+                    console.log('RichAds container ready for ads');
                 }
-                
-                updateSpinUI();
-                elements.spin.taskButton.innerHTML = '<i class="fas fa-ad"></i> Watch Ad (Progress: <span id="spin-ad-count">' + gameState.spin.adsWatched + '</span>/5)';
-                elements.spin.taskButton.disabled = false;
-            }).catch((error) => {
-                // Ad failed to load or was skipped
-                console.error('Ad error:', error);
-                elements.spin.taskProgress.innerHTML = 'Ad failed to load. Please try again.';
-                elements.spin.taskButton.innerHTML = '<i class="fas fa-ad"></i> Watch Ad (Progress: <span id="spin-ad-count">' + gameState.spin.adsWatched + '</span>/5)';
-                elements.spin.taskButton.disabled = false;
-            });
+            } else {
+                console.log('RichAds script loading...');
+                // Try again after a delay
+                setTimeout(initializeRichAds, 2000);
+            }
         }
-
-        // ======================
-        // GAME FUNCTIONS
-        // ======================
-
+        
+        // Show/Hide Sections
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.game-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(`${sectionId}-section`).classList.add('active');
+            
+            // Update tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Update footer nav
+            document.querySelectorAll('.nav-icon').forEach(icon => {
+                icon.classList.remove('active');
+            });
+            
+            // Activate corresponding buttons
+            const sectionMap = {
+                'spin': 0, 'signals': 1, 'giftcards': 2, 'blog': 3, 'ai': 4
+            };
+            
+            if (sectionMap[sectionId] !== undefined) {
+                document.querySelectorAll('.tab-btn')[sectionMap[sectionId]].classList.add('active');
+                document.querySelectorAll('.nav-icon')[sectionMap[sectionId]].classList.add('active');
+            }
+        }
+        
+        // Refresh Trading Signals
+        function refreshSignals() {
+            loadTradingSignals();
+            showNotification('🔄 Trading signals refreshed!');
+        }
+        
+        // Save Signal
+        function saveSignal(signalId) {
+            const savedSignals = JSON.parse(localStorage.getItem('savedSignals') || '[]');
+            const signal = tradingSignals.find(s => s.id === signalId);
+            
+            if (!savedSignals.includes(signalId)) {
+                savedSignals.push(signalId);
+                localStorage.setItem('savedSignals', JSON.stringify(savedSignals));
+                showNotification(`✅ Signal for ${signal.coin} saved!`);
+            } else {
+                showNotification('ℹ️ Signal already saved');
+            }
+        }
+        
+        // Select Gift Card (Show CPA Task)
+        function selectGiftCard(card) {
+            gameState.selectedCard = card;
+            
+            // Show CPA container
+            const cpaContainer = document.getElementById('cpaContainer');
+            const cpaIframe = document.getElementById('cpaIframe');
+            const selectedCardName = document.getElementById('selectedCardName');
+            
+            selectedCardName.textContent = card.name;
+            cpaIframe.src = card.cpaLink;
+            cpaContainer.style.display = 'block';
+            
+            // Scroll to CPA container
+            cpaContainer.scrollIntoView({ behavior: 'smooth' });
+            
+            showNotification(`🎯 Selected ${card.name} Gift Card - Complete the task to get your code!`);
+        }
+        
+        // Claim Gift Card (After CPA completion)
+        function claimGiftCard() {
+            if (!gameState.selectedCard) return;
+            
+            const result = document.getElementById('giftcardResult');
+            const cardType = document.getElementById('cardType');
+            const giftcardCode = document.getElementById('giftcardCode');
+            
+            cardType.textContent = gameState.selectedCard.name;
+            giftcardCode.textContent = generateCardCode();
+            
+            result.classList.add('active');
+            result.scrollIntoView({ behavior: 'smooth' });
+            
+            // Hide CPA container
+            document.getElementById('cpaContainer').style.display = 'none';
+            
+            showNotification(`🎉 ${gameState.selectedCard.name} Gift Card Generated! Code copied to clipboard.`);
+            
+            // Auto-copy code
+            setTimeout(() => copyCode('giftcardCode'), 500);
+        }
+        
+        // Spin Wheel Function
         function spinWheel() {
-            if (gameState.spin.tickets < 1) {
-                alert("You need 1 spin ticket! Watch 5 ads to earn a ticket.");
+            if (gameState.tickets < 1) {
+                alert('You need at least 1 ticket to spin!');
                 return;
             }
             
-            // Rate limiting
-            const now = Date.now();
-            if (now - gameState.userActions.lastSpin < 30000) {
-                alert("Please wait 30 seconds between spins");
-                return;
-            }
+            const spinBtn = document.getElementById('spinBtn');
+            spinBtn.disabled = true;
+            spinBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> SPINNING...';
             
-            gameState.spin.tickets--;
-            gameState.spin.totalSpins++;
-            gameState.userActions.lastSpin = now;
-            updateSpinUI();
+            gameState.tickets--;
+            updateUI();
             
-            // Disable spin button during animation
-            elements.spin.spinBtn.disabled = true;
+            const spinDegrees = 3600 + Math.random() * 3600;
+            const wheel = document.getElementById('wheel');
             
-            const degrees = Math.floor(Math.random() * 3600) + 1800;
-            elements.spin.wheel.style.transform = `rotate(${degrees}deg)`;
-
+            wheel.style.transition = 'transform 4s cubic-bezier(0.17, 0.67, 0.32, 0.98)';
+            wheel.style.transform = `rotate(${spinDegrees}deg)`;
+            
             setTimeout(() => {
-                // Get the only code (always the same)
-                const validCode = gameState.spin.validCodes[0];
-                gameState.spin.currentCode = validCode;
+                const winningIndex = Math.floor(Math.random() * wheelPrizes.length);
+                const prize = wheelPrizes[winningIndex];
                 
-                // Create and display code as image
-                createCodeImage(validCode, elements.spin.codeDisplay);
+                showSpinResult(prize);
+                spinBtn.disabled = false;
+                spinBtn.innerHTML = '<i class="fas fa-sync-alt"></i> SPIN THE WHEEL';
                 
-                elements.spin.result.innerHTML = `You won a crypto code!`;
-                elements.spin.codeDisplay.style.display = "block";
-                elements.spin.copyButton.style.display = "inline-block";
+                // Create confetti
+                createConfetti(prize.color);
+            }, 4000);
+        }
+        
+        // Show Spin Result
+        function showSpinResult(prize) {
+            const result = document.getElementById('spinResult');
+            const prizeName = document.getElementById('prizeName');
+            const cryptoCode = document.getElementById('cryptoCode');
+            
+            prizeName.textContent = `${prize.name} ${prize.value}`;
+            
+            if (prize.codePrefix === 'BONUS') {
+                gameState.tickets += 2;
+                cryptoCode.textContent = '🎉 +2 SPIN TICKETS ADDED!';
+                gameState.totalWon += 0;
+                showNotification('🎁 Bonus! +2 tickets added to your account!');
+            } else if (prize.codePrefix === 'JACK') {
+                cryptoCode.textContent = '🎊 JACKPOT! $100 BONUS UNLOCKED!';
+                gameState.totalWon += 100;
+                showNotification('💰 JACKPOT! $100 added to your winnings!');
+            } else {
+                const code = generateCode(prize.codePrefix);
+                cryptoCode.textContent = code;
+                const prizeValue = parseInt(prize.value.replace('$', '')) || 0;
+                gameState.totalWon += prizeValue;
+                showNotification(`🎉 You won ${prize.name} worth ${prize.value}! Code copied to clipboard.`);
                 
-                gameState.spin.codesWon++;
-                updateSpinUI();
-                elements.spin.spinBtn.disabled = gameState.spin.tickets < 1;
-                
-                createConfetti(elements.spin.wheel);
+                // Auto-copy code
+                setTimeout(() => copyCode('cryptoCode'), 500);
+            }
+            
+            result.classList.add('active');
+            result.scrollIntoView({ behavior: 'smooth' });
+            updateUI();
+        }
+        
+        // Generate Random Code
+        function generateCode(prefix) {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let code = prefix + '-';
+            for (let i = 0; i < 12; i++) {
+                code += chars[Math.floor(Math.random() * chars.length)];
+                if (i === 3 || i === 7) code += '-';
+            }
+            return code;
+        }
+        
+        // Generate Gift Card Code
+        function generateCardCode() {
+            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let code = '';
+            for (let i = 0; i < 16; i++) {
+                code += chars[Math.floor(Math.random() * chars.length)];
+                if (i === 3 || i === 7 || i === 11) code += '-';
+            }
+            return code;
+        }
+        
+        // Read Blog Article
+        function readBlogArticle(title, link) {
+            showNotification(`📖 Opening article: "${title}"`);
+            // Open article in new tab
+            setTimeout(() => {
+                window.open(link, '_blank');
+            }, 500);
+        }
+        
+        // Copy Code
+        function copyCode(elementId) {
+            const code = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(code);
+            showNotification('✅ Code copied to clipboard!');
+        }
+        
+        // Update UI
+        function updateUI() {
+            document.getElementById('ticketCount').textContent = gameState.tickets;
+            document.getElementById('ticketDisplay').textContent = gameState.tickets;
+            document.getElementById('totalWon').textContent = '$' + gameState.totalWon;
+            
+            // Update spin button
+            const spinBtn = document.getElementById('spinBtn');
+            if (gameState.tickets < 1) {
+                spinBtn.disabled = true;
+                spinBtn.style.opacity = '0.7';
+                spinBtn.innerHTML = '<i class="fas fa-ticket-alt"></i> NEED TICKETS';
+            } else {
+                spinBtn.disabled = false;
+                spinBtn.style.opacity = '1';
+                spinBtn.innerHTML = '<i class="fas fa-sync-alt"></i> SPIN THE WHEEL';
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('spinTickets', gameState.tickets);
+            localStorage.setItem('totalWon', gameState.totalWon);
+        }
+        
+        // Show Notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 15px;
+                right: 15px;
+                background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                z-index: 10000;
+                animation: slideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+                font-weight: bold;
+                max-width: 300px;
+                text-align: center;
+                border: 1px solid rgba(255,255,255,0.2);
+                backdrop-filter: blur(10px);
+                font-size: 0.9rem;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                setTimeout(() => notification.remove(), 500);
             }, 3000);
         }
-
-        // ======================
-        // COPY FUNCTIONS
-        // ======================
-
-        function copyResultCode() {
-            if (gameState.spin.currentCode) {
-                copyToClipboard(gameState.spin.currentCode, elements.spin.copyButton);
+        
+        // Create Confetti
+        function createConfetti(color = null) {
+            const colors = color ? [color] : ['#00f3ff', '#ff00ff', '#00ff9d', '#ffde00'];
+            
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement('div');
+                const confettiColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                confetti.style.cssText = `
+                    position: fixed;
+                    width: 8px;
+                    height: 8px;
+                    background: ${confettiColor};
+                    border-radius: 50%;
+                    top: -20px;
+                    left: ${Math.random() * 100}vw;
+                    z-index: 9999;
+                    pointer-events: none;
+                    box-shadow: 0 0 8px ${confettiColor};
+                `;
+                
+                document.body.appendChild(confetti);
+                
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: 2000 + Math.random() * 2000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                });
+                
+                animation.onfinish = () => confetti.remove();
             }
         }
-
-        function copyToClipboard(text, buttonElement) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed';
-            document.body.appendChild(textarea);
-            textarea.select();
-            
-            try {
-                document.execCommand('copy');
-                buttonElement.innerHTML = '✓ Copied!';
-                buttonElement.style.backgroundColor = 'var(--success-color)';
-                setTimeout(() => {
-                    buttonElement.innerHTML = '📋 Copy Code';
-                    buttonElement.style.backgroundColor = 'var(--primary-color)';
-                }, 2000);
-            } catch (err) {
-                alert("Could not copy code. Please copy manually.");
-            } finally {
-                document.body.removeChild(textarea);
+        
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%) translateY(-15px); opacity: 0; }
+                to { transform: translateX(0) translateY(0); opacity: 1; }
             }
-        }
-
-        function shareOnTelegram() {
-            const message = `🎉 Join GiftBox for free crypto rewards and AI price predictions! https://t.me/redpacket_box!`;
-            const shareUrl = `https://t.me/share/url?text=${encodeURIComponent(message)}`;
-            
-            // Open Telegram share dialog
-            window.open(shareUrl, '_blank', 'noopener,noreferrer');
-            
-            // REMOVED: No ticket reward for sharing
-            // Just show a thank you message
-            setTimeout(() => {
-                showNotification("Thanks for sharing! 🎁");
-            }, 2000);
-        }
-
-        function showPage(pageId) {
-            document.getElementById('spin-game').style.display = pageId === 'spin-game' ? 'block' : 'none';
-            document.getElementById('ai-predictions').style.display = pageId === 'ai-predictions' ? 'block' : 'none';
-            document.getElementById('news-section').style.display = pageId === 'news-section' ? 'block' : 'none';
-            document.getElementById('invite-friends').style.display = pageId === 'invite-friends' ? 'block' : 'none';
-            
-            // Update active nav button
-            elements.nav.spin.classList.toggle('active', pageId === 'spin-game');
-            elements.nav.ai.classList.toggle('active', pageId === 'ai-predictions');
-            elements.nav.news.classList.toggle('active', pageId === 'news-section');
-            elements.nav.invite.classList.toggle('active', pageId === 'invite-friends');
-        }
-
-        function createConfetti(element) {
-            const rect = element.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = centerX + 'px';
-                    confetti.style.top = centerY + 'px';
-                    confetti.style.backgroundColor = getRandomColor();
-                    document.body.appendChild(confetti);
-                    
-                    const angle = Math.random() * Math.PI * 2;
-                    const velocity = 3 + Math.random() * 3;
-                    const x = Math.cos(angle) * velocity;
-                    const y = Math.sin(angle) * velocity;
-                    
-                    let posX = centerX;
-                    let posY = centerY;
-                    let opacity = 1;
-                    let scale = 0.5 + Math.random();
-                    
-                    const animate = () => {
-                        posX += x;
-                        posY += y + 0.5; // Add gravity
-                        opacity -= 0.02;
-                        scale -= 0.01;
-                        
-                        if (opacity <= 0 || scale <= 0) {
-                            confetti.remove();
-                            return;
-                        }
-                        
-                        confetti.style.left = posX + 'px';
-                        confetti.style.top = posY + 'px';
-                        confetti.style.opacity = opacity;
-                        confetti.style.transform = `scale(${scale})`;
-                        requestAnimationFrame(animate);
-                    };
-                    
-                    animate();
-                }, i * 20);
+            @keyframes slideOut {
+                from { transform: translateX(0) translateY(0); opacity: 1; }
+                to { transform: translateX(100%) translateY(-15px); opacity: 0; }
             }
-        }
-
-        function getRandomColor() {
-            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        function showNotification(message) {
-            const notification = document.getElementById('hidden-ticket-notification');
-            notification.textContent = message;
-            notification.style.display = 'block';
-            
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 2000);
-        }
-
-        // FAQ Toggle Function - FIXED
-        function toggleFAQ(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('.faq-icon');
-            
-            // Toggle active class on question
-            element.classList.toggle('active');
-            
-            // Toggle answer visibility
-            if (answer.classList.contains('active')) {
-                answer.classList.remove('active');
-            } else {
-                answer.classList.add('active');
-            }
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            initUI();
-            showPage('spin-game');
-        });
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize game on load
+        window.addEventListener('load', initGame);
     </script>
 </body>
 </html>
