@@ -674,116 +674,8 @@
         }
     </style>
     
-    <!-- Push Notifications Script -->
-    <script>
-      // Push Notifications Setup for RichAds
-      (function() {
-        // Function to enable notifications
-        window.enableRichAdsNotifications = function() {
-          if (!('Notification' in window)) {
-            alert('This browser does not support notifications');
-            return;
-          }
-          
-          Notification.requestPermission().then(function(permission) {
-            if (permission === 'granted') {
-              console.log('Notification permission granted.');
-              
-              // Register service worker
-              if ('serviceWorker' in navigator) {
-                
-                  .then(function(registration) {
-                    console.log('Service Worker registered:', registration);
-                    showNotificationSuccess();
-                  })
-                  .catch(function(error) {
-                    console.error('Service Worker registration failed:', error);
-                  });
-              }
-            } else if (permission === 'denied') {
-              alert('Notifications blocked. Please enable in browser settings.');
-            }
-          });
-        };
-        
-        // Show success message
-        function showNotificationSuccess() {
-          const successMsg = document.createElement('div');
-          successMsg.innerHTML = `
-            <div style="position: fixed; top: 20px; right: 20px; background: linear-gradient(45deg, #4CAF50, #2E7D32); color: white; padding: 15px; border-radius: 10px; z-index: 10000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); max-width: 300px;">
-              <p style="margin: 0 0 5px 0; font-weight: bold;">✅ Notifications Enabled!</p>
-              <p style="margin: 0; font-size: 0.9rem;">You'll receive crypto signals and bonus alerts</p>
-            </div>
-          `;
-          document.body.appendChild(successMsg);
-          setTimeout(() => successMsg.remove(), 5000);
-        }
-        
-        // Check and show notification prompt
-        function checkAndPromptNotifications() {
-          // Only show if not already granted/denied
-          if (Notification.permission === 'default') {
-            setTimeout(() => {
-              showNotificationPrompt();
-            }, 5000); // Show after 5 seconds
-          }
-        }
-        
-        // Show notification prompt
-        function showNotificationPrompt() {
-          const prompt = document.createElement('div');
-          prompt.id = 'richads-notification-prompt';
-          prompt.innerHTML = `
-            <div style="position: fixed; bottom: 80px; right: 20px; background: linear-gradient(45deg, #2196F3, #0D47A1); color: white; padding: 20px; border-radius: 15px; z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 320px; border: 2px solid #64B5F6;">
-              <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <div style="font-size: 2rem; margin-right: 15px;">🔔</div>
-                <div>
-                  <p style="margin: 0 0 5px 0; font-weight: bold; font-size: 1.1rem;">Get Crypto Alerts!</p>
-                  <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Real-time trading signals & rewards</p>
-                </div>
-              </div>
-              <div style="display: flex; gap: 10px;">
-                <button onclick="enableRichAdsNotifications()" style="flex: 1; background: #4CAF50; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">
-                  Enable
-                </button>
-                <button onclick="this.parentElement.parentElement.parentElement.remove()" style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); padding: 12px 20px; border-radius: 8px; cursor: pointer;">
-                  Later
-                </button>
-              </div>
-            </div>
-          `;
-          document.body.appendChild(prompt);
-        }
-        
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-          // Check notification status
-          checkAndPromptNotifications();
-          
-          // Also add a button in the signals section
-          const signalsSection = document.getElementById('signals-section');
-          if (signalsSection) {
-            const notificationBtn = document.createElement('button');
-            notificationBtn.className = 'btn';
-            notificationBtn.innerHTML = '<i class="fas fa-bell"></i> 🔔 Enable Push Alerts';
-            notificationBtn.style.cssText = 'margin: 15px auto; background: linear-gradient(45deg, #FF9800, #FF5722); display: block;';
-            notificationBtn.onclick = window.enableRichAdsNotifications;
-            
-            const container = signalsSection.querySelector('.signals-container');
-            if (container) {
-              signalsSection.insertBefore(notificationBtn, container);
-            }
-          }
-        });
-        
-        // Auto-register service worker if already have permission
-        if (Notification.permission === 'granted' && 'serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/firebase-messaging-sw.js')
-            .then(reg => console.log('Auto-registered SW:', reg))
-            .catch(err => console.error('Auto-registration failed:', err));
-        }
-      })();
-    </script>
+    <!-- ✅ REMOVED: All Firebase-related scripts and functions -->
+    <!-- ✅ KEPT: Only RichAds push script which handles everything -->
 </head>
 <body>
     <!-- Header -->
@@ -883,20 +775,15 @@
     
     <!-- ====== CRYPTO SIGNALS SECTION ====== -->
     <section id="signals-section" class="game-section">
-        <!-- Push Notifications Banner -->
-        <div style="text-align: center; margin: 15px 0;">
-            <div style="background: linear-gradient(45deg, rgba(33,150,243,0.1), rgba(13,71,161,0.1)); padding: 20px; border-radius: 15px; border: 2px solid rgba(33,150,243,0.3); margin-bottom: 20px;">
-                <h3 style="color: var(--neon-blue); margin-bottom: 10px;">
-                    <i class="fas fa-bell"></i> Push Notification Alerts
-                </h3>
-                <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                    Get instant crypto trading signals delivered to your browser
-                </p>
-                <button class="btn" onclick="enableRichAdsNotifications()" style="background: linear-gradient(45deg, #FF9800, #FF5722);">
-                    <i class="fas fa-bell"></i> Enable Push Notifications
-                </button>
-            </div>
-        </div>
+        <!-- RichAds In-Page Ad Container (MANDATORY for impressions) -->
+        <div id="richads_inpage"></div>
+        <script>
+            window.rchads = window.rchads || [];
+            rchads.push({
+                type: 'inpage',
+                id: 'richads_inpage'
+            });
+        </script>
         
         <h2 style="text-align: center; margin: 15px; color: var(--neon-green); font-size: 1.3rem;">
             🚨 LIVE CRYPTO TRADING SIGNALS
@@ -1394,10 +1281,8 @@
                 document.getElementById('onlineUsers').textContent = randomUser;
             }, 5000);
             
-            // Initialize RichAds
-            setTimeout(() => {
-                initializeRichAds();
-            }, 2000);
+            // ✅ RichAds is already initialized by their scripts
+            console.log('RichAds scripts loaded - push notifications, pops, and in-page ads active');
         }
         
         // Update Stats - FIXED MISSING FUNCTION
@@ -1579,35 +1464,6 @@
                 'SOL': '◎'
             };
             return icons[symbol] || '💰';
-        }
-        
-        // Initialize RichAds
-        function initializeRichAds() {
-            // Check if RichAds is loaded
-            if (typeof richAds !== 'undefined') {
-                console.log('RichAds loaded successfully');
-                
-                // RichAds will automatically populate divs with specific IDs or classes
-                // Create a div for RichAds to populate
-                const adContainer = document.getElementById('richadsContainer');
-                if (adContainer) {
-                    // Clear the loading message
-                    adContainer.innerHTML = '';
-                    
-                    // Create a placeholder div for ads
-                    const adPlaceholder = document.createElement('div');
-                    adPlaceholder.id = 'richads-placeholder';
-                    adPlaceholder.style.width = '100%';
-                    adPlaceholder.style.minHeight = '200px';
-                    adContainer.appendChild(adPlaceholder);
-                    
-                    console.log('RichAds container ready for ads');
-                }
-            } else {
-                console.log('RichAds script loading...');
-                // Try again after a delay
-                setTimeout(initializeRichAds, 2000);
-            }
         }
         
         // Show/Hide Sections
