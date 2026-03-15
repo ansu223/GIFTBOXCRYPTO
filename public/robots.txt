@@ -1,24 +1,58 @@
-{
-  "redirects": [
-    {
-      "source": "/blog.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "http://www.spin2earncrypto.lat/:path*",
-      "destination": "https://spin2earncrypto.lat/:path*",
-      "permanent": true
-    },
-    {
-      "source": "http://spin2earncrypto.lat/:path*",
-      "destination": "https://spin2earncrypto.lat/:path*", 
-      "permanent": true
-    },
-    {
-      "source": "https://www.spin2earncrypto.lat/:path*",
-      "destination": "https://spin2earncrypto.lat/:path*",
-      "permanent": true
-    }
-  ]
-}
+# robots.txt for spin2earncrypto.lat
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# Allow all important pages
+Allow: /game.html
+Allow: /blog-*.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /faq.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /winners.html
+Allow: /invite.html
+Allow: /how-to-play.html
+Allow: /free-*.html
+Allow: /category/
+
+# Sitemap location
+Sitemap: https://spin2earncrypto.lat/sitemap.xml
+
+# Crawl delay for polite bots
+Crawl-delay: 3
+
+# Host
+Host: https://spin2earncrypto.lat
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Block spam bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
