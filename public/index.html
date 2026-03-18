@@ -62,21 +62,21 @@
     <!-- TradingView Widget Library -->
     <script src="https://s3.tradingview.com/tv.js"></script>
     
-    <!-- ===== RICHADS SCRIPTS - ALL 3 PROVIDED ===== -->
-    <!-- RichAds Popunder Ad -->
+    <!-- ===== RICHADS SCRIPTS - FULLY CONFIGURED ===== -->
+    <!-- Popunder Ad - From instruction 1 -->
     <script src="https://richinfo.co/richpartners/pops/js/richads-pu-ob.js" data-pubid="996079" data-siteid="386873" async data-cfasync="false"></script>
     
-    <!-- RichAds Push Notification Ad -->
-    <script type="module" src="https://richinfo.co/richpartners/push/js/rp-cl-ob.js?pubid=996079&siteid=386846&niche=33" async data-cfasync="false"></script>
+    <!-- Push Notification Ad - From instruction 2 (corrected siteid) -->
+    <script type="module" src="https://richinfo.co/richpartners/push/js/rp-cl-ob.js?pubid=996079&siteid=386872&niche=33" async data-cfasync="false"></script>
     
-    <!-- RichAds In-Page Ad -->
+    <!-- In-Page Ad - Additional for better monetization -->
     <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=996079&siteid=386874" async></script>
     
-    <!-- Additional Ad Network for backup -->
+    <!-- Backup Ad Network -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script>
     
     <style>
-        /* BEAUTIFUL WHEEL DESIGN - PRESERVED WITH OPTIMIZATIONS */
+        /* BEAUTIFUL WHEEL DESIGN - FULLY PRESERVED */
         :root {
             --primary-color: #6C4CF5;
             --primary-light: #8A6DF7;
@@ -196,7 +196,7 @@
             100% { width: 100%; }
         }
 
-        /* OPTIMIZED NAVBAR - hardware accelerated */
+        /* OPTIMIZED NAVBAR */
         .navbar {
             display: flex;
             justify-content: space-around;
@@ -264,7 +264,6 @@
             font-size: 22px;
         }
 
-        /* Clean Header */
         .crypto-header {
             background: rgba(108, 76, 245, 0.1);
             border-radius: 40px;
@@ -299,7 +298,6 @@
             border-color: var(--success-color);
         }
 
-        /* Logo Styles */
         .logo-container {
             display: flex;
             align-items: center;
@@ -322,7 +320,6 @@
             vertical-align: middle;
         }
 
-        /* BEAUTIFUL WHEEL - hardware accelerated */
         .wheel-container {
             position: relative;
             width: 260px;
@@ -351,7 +348,6 @@
             overflow: visible;
         }
 
-        /* OPTIMIZED BUTTONS */
         .spin-button, .cast-button {
             background: var(--gradient-primary);
             color: white;
@@ -437,7 +433,6 @@
             cursor: not-allowed;
         }
 
-        /* OPTIMIZED MODAL */
         .golden-spin-modal {
             position: fixed;
             top: 0;
@@ -577,7 +572,6 @@
             border: 2px solid white;
         }
 
-        /* Telegram Code Display */
         .telegram-code-display {
             background: var(--gradient-primary);
             padding: 15px;
@@ -608,7 +602,6 @@
             border: 1px solid var(--gold-color);
         }
 
-        /* Invite Progress Card */
         .invite-progress-card {
             background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,165,0,0.15) 100%);
             border-radius: 25px;
@@ -707,7 +700,6 @@
             transform: translateZ(0);
         }
 
-        /* Weekly Winners Leaderboard */
         .leaderboard-section {
             background: var(--gradient-card);
             border-radius: 25px;
@@ -811,7 +803,6 @@
             100% { opacity: 0.7; transform: scale(1); }
         }
 
-        /* Alphabet Game Styles */
         .alphabet-game-frame {
             display: none;
             margin: 10px 0;
@@ -919,7 +910,6 @@
             margin-top: 5px;
         }
 
-        /* OPTIMIZED GAME AREA - hardware accelerated */
         .alphabet-game-area {
             position: relative;
             width: 100%;
@@ -1010,7 +1000,6 @@
             border: 1px solid var(--gold-color);
         }
 
-        /* OPTIMIZED CONFETTI */
         .confetti {
             position: fixed;
             width: 6px;
@@ -1043,7 +1032,6 @@
             100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
         }
 
-        /* SEO Optimized Footer */
         .seo-footer {
             max-width: 400px;
             margin: 20px auto;
@@ -1406,7 +1394,7 @@
     </div>
 
     <script>
-        // ===== OPTIMIZED JAVASCRIPT FOR STANDALONE WEBSITE =====
+        // ===== OPTIMIZED JAVASCRIPT WITH AD INTEGRATION =====
         
         // Cache DOM elements
         const domCache = {
@@ -1455,7 +1443,6 @@
                 totalSpins: parseInt(localStorage.getItem('totalSpins')) || 0,
                 codesWon: parseInt(localStorage.getItem('codesWon')) || 0,
                 currentCode: '',
-                // ========= 10 CODES =========
                 validCodes: ["6KABVV36", "DLV0VODU", "8GYNAWPV", "SL4TFFS3", "BT1OICV1", "UO54IOSR", "UVPNMQYA", "8CU8BS2T", "W6UU5K0N", "5F0RH1VV"],
                 lastSpinTime: parseInt(localStorage.getItem('lastSpinTime')) || 0,
                 completedSpins: JSON.parse(localStorage.getItem('completedSpins')) || []
@@ -1498,9 +1485,9 @@
                 try {
                     console.log('RichAds ads triggered');
                     
-                    // The scripts are already loaded and will handle:
+                    // The scripts are already loaded in head and will handle:
                     // 1. Popunder ads (richads-pu-ob.js)
-                    // 2. Push notifications (rp-cl-ob.js)
+                    // 2. Push notifications (rp-cl-ob.js) - corrected siteid=386872
                     // 3. In-page ads (richads-ob.js)
                     
                     // Track that ad was shown
@@ -1637,8 +1624,6 @@
                         referrerInvites++;
                         localStorage.setItem(`invites_${referrerId}`, referrerInvites.toString());
                         
-                        // For demo purposes, we'll use the current user as referrer
-                        // In production, you'd need a backend to track this properly
                         if (referrerId === USER_ID) {
                             gameState.goldenJackpot.invites = referrerInvites;
                             localStorage.setItem('goldenInvites', referrerInvites.toString());
@@ -1694,7 +1679,6 @@
                 domCache.wheel.style.transform = `rotate(${degrees}deg)`;
                 
                 setTimeout(() => {
-                    // Use all 10 codes
                     let codeIndex = gameState.spin.totalSpins % gameState.spin.validCodes.length;
                     if (gameState.spin.completedSpins.length < gameState.spin.validCodes.length) {
                         codeIndex = gameState.spin.completedSpins.length;
@@ -1850,7 +1834,6 @@
             domCache.alphabetFrame.style.display = 'block';
             updateCarPosition();
             
-            // Start game timer
             if (gameState.alphabetGame.gameTimer) clearInterval(gameState.alphabetGame.gameTimer);
             gameState.alphabetGame.gameTimer = setInterval(() => {
                 if (!gameState.alphabetGame.isPlaying) return;
@@ -1863,7 +1846,6 @@
                 }
             }, 1000);
             
-            // Start collectible generation
             if (gameState.alphabetGame.collectibleInterval) clearInterval(gameState.alphabetGame.collectibleInterval);
             gameState.alphabetGame.collectibleInterval = setInterval(() => {
                 if (!gameState.alphabetGame.isPlaying) return;
@@ -2103,7 +2085,6 @@
             updateCarPosition();
         }
 
-        // Optimized leaderboard
         function startLeaderboardAnimation() {
             updateLeaderboardUI();
             setInterval(() => {
@@ -2146,7 +2127,6 @@
             gameState.alphabetGame.currentGameIndex = 0;
         }
 
-        // Social functions
         function joinTelegramChannel() {
             window.open('https://t.me/redpacket_box', '_blank');
             showNotification("Opening Telegram Channel...");
@@ -2176,7 +2156,6 @@
             window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(message)}`, '_blank');
         }
 
-        // Page navigation
         function showPage(pageId) {
             document.getElementById('spin-game').style.display = pageId === 'spin-game' ? 'block' : 'none';
             document.getElementById('weekly-winners').style.display = pageId === 'weekly-winners' ? 'block' : 'none';
@@ -2191,7 +2170,6 @@
             }
         }
 
-        // Optimized confetti
         function createConfetti() {
             const rect = domCache.spinBtn.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
