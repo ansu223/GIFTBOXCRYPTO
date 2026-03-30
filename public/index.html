@@ -17,11 +17,11 @@
     <meta name="rating" content="general">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://spin2earncrypto.lat">
+    <link rel="canonical" href="https://cryptospinwin.com">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://spin2earncrypto.lat">
+    <meta property="og:url" content="https://cryptospinwin.com">
     <meta property="og:title" content="Spin & Win Free Crypto Codes Daily | Instant XRP, BTC, ETH Rewards">
     <meta property="og:description" content="🚀 Play now & claim free XRP, BTC, ETH codes instantly! 100% free crypto rewards game. Spin the wheel and win real crypto!">
     <meta property="og:image" content="https://i.ibb.co/9knDKmB6/photo-2025-03-12-19-33-09-modified.png">
@@ -30,7 +30,7 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://spin2earncrypto.lat">
+    <meta property="twitter:url" content="https://cryptospinwin.com">
     <meta property="twitter:title" content="Spin & Win Free Crypto Codes Daily | Instant XRP, BTC, ETH Rewards">
     <meta property="twitter:description" content="🚀 Play now & claim free XRP, BTC, ETH codes instantly! 100% free crypto rewards game. Spin the wheel and win real crypto!">
     <meta property="twitter:image" content="https://i.ibb.co/9knDKmB6/photo-2025-03-12-19-33-09-modified.png">
@@ -62,15 +62,18 @@
     <!-- TradingView Widget Library -->
     <script src="https://s3.tradingview.com/tv.js"></script>
     
-    <!-- ===== RICHADS SCRIPTS - CORRECTED FOR spin2earncrypto.lat ===== -->
-    <!-- Popunder Ad - siteid: 386873 -->
+    <!-- ===== RICHADS SCRIPTS - FULLY CONFIGURED ===== -->
+    <!-- Popunder Ad - From instruction 1 -->
     <script src="https://richinfo.co/richpartners/pops/js/richads-pu-ob.js" data-pubid="996079" data-siteid="386873" async data-cfasync="false"></script>
     
-    <!-- Push Notification Ad - CORRECTED siteid: 386846 (was 386872) -->
-    <script type="module" src="https://richinfo.co/richpartners/push/js/rp-cl-ob.js?pubid=996079&siteid=386846&niche=33" async data-cfasync="false"></script>
+    <!-- Push Notification Ad - From instruction 2 (corrected siteid) -->
+    <script type="module" src="https://richinfo.co/richpartners/push/js/rp-cl-ob.js?pubid=996079&siteid=386872&niche=33" async data-cfasync="false"></script>
     
-    <!-- In-Page Ad - siteid: 386874 -->
+    <!-- In-Page Ad - Additional for better monetization -->
     <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=996079&siteid=386874" async></script>
+    
+    <!-- Backup Ad Network -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script>
     
     <style>
         /* BEAUTIFUL WHEEL DESIGN - FULLY PRESERVED */
@@ -1476,37 +1479,16 @@
             adCooldown: 30000 // 30 seconds cooldown between ads
         };
 
-        // Manual popunder trigger function
-        function triggerPopunder() {
-            try {
-                // Check if richads popunder function exists
-                if (typeof richads_popunder !== 'undefined') {
-                    richads_popunder();
-                    console.log('Popunder triggered manually');
-                    return true;
-                }
-                // Alternative: some implementations use window.open
-                else if (window.richads && typeof window.richads.popunder === 'function') {
-                    window.richads.popunder();
-                    console.log('Alternative popunder triggered');
-                    return true;
-                }
-                console.log('Popunder function not available');
-                return false;
-            } catch (e) {
-                console.log('Popunder trigger error:', e);
-                return false;
-            }
-        }
-
         // Show RichAds ads - all three types are auto-initialized via scripts
         function showRichAds() {
             return new Promise((resolve) => {
                 try {
                     console.log('RichAds ads triggered');
                     
-                    // Trigger popunder manually for better success rate
-                    triggerPopunder();
+                    // The scripts are already loaded in head and will handle:
+                    // 1. Popunder ads (richads-pu-ob.js)
+                    // 2. Push notifications (rp-cl-ob.js) - corrected siteid=386872
+                    // 3. In-page ads (richads-ob.js)
                     
                     // Track that ad was shown
                     adProviders.spinCount++;
