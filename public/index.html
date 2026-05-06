@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- SEO Primary Meta Tags -->
-    <title>Spin & Win Free Crypto Codes Daily | BTC, ETH, XRP Rewards</title>
-    <meta name="description" content="Spin to win free crypto instantly! Play daily and earn real Bitcoin, Ethereum, XRP & USDT codes. No deposit, 100% free crypto rewards game.">
-    <meta name="keywords" content="free crypto, spin to win, bitcoin free, ethereum rewards, xrp airdrop, crypto games, play to earn, binance codes, free usdt, crypto wheel, no deposit bonus, daily crypto rewards">
-    <meta name="author" content="Crypto Spin Hub">
+    <title>Spin & Win + Crash Plane | Crypto Rewards</title>
+    <meta name="description" content="Play to earn free crypto instantly. Spin the wheel or play Crash Plane and win daily rewards like XRP, BTC, ETH codes. 100% free crypto rewards game.">
+    <meta name="keywords" content="free crypto, spin & win crypto, crash game, earn XRP codes, win BTC, crypto rewards, crypto games, play to earn, cryptocurrency, bitcoin, ethereum, XRP">
+    <meta name="author" content="Crypto Rewards Team">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="1 day">
-    
-    <!-- Canonical & Open Graph -->
-    <link rel="canonical" href="https://cryptospinwin.app">
-    <meta property="og:title" content="Spin & Win Free Crypto Codes Daily">
-    <meta property="og:description" content="Play now & claim free XRP, BTC, ETH codes instantly! 100% free crypto rewards game.">
-    <meta property="og:image" content="https://i.ibb.co/9knDKmB6/photo-2025-03-12-19-33-09-modified.png">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#6C4CF5">
+    <link rel="canonical" href="https://redpacketbox.vercel.app/">
+    <meta property="og:title" content="Spin & Win + Crash Plane | Crypto Rewards">
+    <meta property="og:description" content="Play now & claim free XRP, BTC, ETH codes instantly. Crash game with Stars!">
+    <meta property="og:url" content="https://redpacketbox.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://redpacketbox.vercel.app/preview.png">
     
-    <!-- Telegram WebApp & Firebase SDK (for dynamic features like chat) -->
-    <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+    <!-- RICHADS MONETIZATION - Website implementation (as requested) -->
+    <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=996079&siteid=386874" async></script>
+    <script src="https://richinfo.co/richpartners/pops/js/richads-pu-ob.js" data-pubid="996079" data-siteid="386873" async data-cfasync="false"></script>
+    <script src="https://richinfo.co/richpartners/pops/js/richads-pu-ob.js" data-pubid="996079" data-siteid="386871" async data-cfasync="false"></script>
+    <script type="module" src="https://richinfo.co/richpartners/push/js/rp-cl-ob.js?pubid=996079&siteid=386861&niche=33" async data-cfasync="false"></script>
+    <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=996079&siteid=386848" async></script>
+    <script type="module" src="https://richinfo.co/richpartners/push/js/rp-cl-ob.js?pubid=996079&siteid=386846&niche=33" async data-cfasync="false"></script>
+    
+    <!-- Firebase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/firebase@10.12.2/firebase-app-compat.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/firebase@10.12.2/firebase-database-compat.min.js"></script>
     
@@ -31,568 +32,446 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            user-select: none;
-        }
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: linear-gradient(160deg, #0F0F23 0%, #1A1A2E 100%);
-            color: #FFFFFF;
-            padding-bottom: 80px;
-            min-height: 100vh;
-        }
         :root {
-            --primary: #6C4CF5;
-            --gold: #FFD166;
-            --success: #06D6A0;
-            --dark-card: #1A1A2E;
+            --primary-color: #6C4CF5;
+            --primary-light: #8A6DF7;
+            --primary-dark: #5533D4;
+            --secondary-color: #FFD166;
+            --secondary-light: #FFE3A3;
+            --dark-bg: #0F0F23;
+            --card-bg: #1A1A2E;
+            --card-hover: #22223D;
+            --text-color: #FFFFFF;
             --text-secondary: #B8B8D1;
+            --success-color: #06D6A0;
+            --warning-color: #FFD166;
+            --error-color: #EF476F;
+            --navbar-bg: #1A1A2E;
+            --button-bg: #2D2D44;
+            --telegram-blue: #0088cc;
+            --disabled-color: #4A4A6A;
+            --gold-color: #FFD700;
+            --gradient-primary: linear-gradient(135deg, #6C4CF5 0%, #8A6DF7 100%);
+            --gradient-card: linear-gradient(145deg, #1A1A2E, #22223D);
+            --gradient-dark: linear-gradient(160deg, #0F0F23 0%, #1A1A2E 100%);
+            --gradient-success: linear-gradient(135deg, #06D6A0 0%, #0ACF83 100%);
+            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            --crash-red: #ff3366;
         }
-        .navbar {
-            display: flex;
-            justify-content: space-around;
-            background: #1A1A2E;
-            padding: 8px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 1000;
-            border-top: 1px solid var(--primary);
-        }
-        .navbar button {
-            background: #2D2D44;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 25px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: 0.1s;
-        }
-        .navbar button.active {
-            background: linear-gradient(135deg, #6C4CF5, #8A6DF7);
-            color: white;
-            border: 1px solid var(--gold);
-        }
-        .game-container {
-            max-width: 420px;
-            margin: 20px auto;
-            background: linear-gradient(145deg, #1A1A2E, #22223D);
-            border-radius: 28px;
-            padding: 20px;
-            border: 1px solid rgba(108,76,245,0.3);
-        }
-        .wheel-container {
-            position: relative;
-            width: 260px;
-            height: 260px;
-            margin: 15px auto;
-            filter: drop-shadow(0 0 15px rgba(108,76,245,0.6));
-        }
-        .wheel-arrow {
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 14px solid transparent;
-            border-right: 14px solid transparent;
-            border-top: 30px solid var(--gold);
-            z-index: 20;
-        }
-        .wheel-svg {
-            width: 100%;
-            height: 100%;
-        }
-        .spin-button {
-            background: linear-gradient(135deg, #6C4CF5, #8A6DF7);
-            width: 100%;
-            padding: 14px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 18px;
-            border: 2px solid var(--gold);
-            color: white;
-            cursor: pointer;
-            margin: 10px 0;
-        }
-        .invite-card {
-            background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.1));
-            border-radius: 24px;
-            padding: 20px;
-            border: 2px solid var(--gold);
-            margin-top: 15px;
-        }
-        .invite-icons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin: 15px 0;
-        }
-        .invite-circle {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: rgba(255,215,0,0.1);
-            border: 2px solid var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        .invite-circle.completed {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: black;
-        }
-        .chat-container {
-            background: rgba(0,0,0,0.2);
-            border-radius: 20px;
-            height: 320px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .chat-message {
-            background: rgba(255,255,255,0.08);
-            border-radius: 18px;
-            padding: 8px 12px;
-            max-width: 85%;
-            text-align: left;
-        }
-        .my-message {
-            align-self: flex-end;
-            background: var(--primary);
-        }
-        .chat-input-area {
-            display: flex;
-            gap: 8px;
-            padding: 10px;
-            background: rgba(0,0,0,0.3);
-        }
-        .chat-input {
-            flex: 1;
-            background: #1A1A2E;
-            border: 1px solid var(--primary);
-            border-radius: 30px;
-            padding: 10px;
-            color: white;
-        }
-        .feed-post {
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            padding: 12px;
-            margin-bottom: 12px;
-        }
-        .seo-footer {
-            max-width: 420px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(108,76,245,0.1);
-            border-radius: 24px;
-            font-size: 13px;
-            color: #aaa;
-            text-align: left;
-        }
-        .code-value {
-            font-size: 22px;
-            font-weight: bold;
-            background: #00000055;
-            padding: 12px;
-            border-radius: 16px;
-            cursor: pointer;
-        }
-        .golden-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.15s;
-        }
-        .golden-modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .hidden-notify {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--gold);
-            color: black;
-            padding: 12px 20px;
+        
+        /* RedPacket APRIL Bonus Code Styles */
+        .crypto-header {
+            background: rgba(108, 76, 245, 0.1);
             border-radius: 40px;
-            z-index: 1100;
-            display: none;
+            padding: 6px 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            display: inline-block;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+        .bonus-code-mini {
+            color: var(--gold-color);
             font-weight: bold;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 3px 8px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            font-size: 12px;
+            transition: background 0.08s;
         }
-        @media (max-width: 450px) {
-            .wheel-container { width: 220px; height: 220px; }
+        .bonus-code-mini.copied {
+            background: rgba(6, 214, 160, 0.2);
+            border-color: var(--success-color);
         }
+        .header-divider {
+            color: var(--text-secondary);
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; user-select: none; }
+        body { font-family: 'Space Grotesk', sans-serif; text-align: center; background: var(--gradient-dark); color: var(--text-color); padding-bottom: 80px; min-height: 100vh; }
+        #loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--gradient-dark); display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.1s ease; }
+        #loader-wrapper.hidden { opacity: 0; pointer-events: none; }
+        .loader-spinner { width: 60px; height: 60px; border: 4px solid rgba(108, 76, 245, 0.2); border-top: 4px solid var(--primary-color); border-radius: 50%; animation: spin 0.3s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .navbar { display: flex; justify-content: space-around; background-color: var(--navbar-bg); padding: 8px; position: fixed; bottom: 0; width: 100%; z-index: 1000; border-top: 1px solid var(--primary-color); backdrop-filter: blur(5px); }
+        .navbar button { background: var(--button-bg); color: var(--text-secondary); border: none; padding: 8px 12px; font-size: 12px; cursor: pointer; border-radius: 25px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-weight: 600; min-width: 60px; border: 1px solid rgba(108, 76, 245, 0.3); }
+        .navbar button i { font-size: 18px; }
+        .navbar button.active { background: var(--gradient-primary); color: white; border: 1px solid var(--secondary-color); }
+        .game-container { margin: 15px auto; padding: 20px; max-width: 400px; background: var(--gradient-card); border-radius: 25px; border: 1px solid rgba(108, 76, 245, 0.3); }
+        .action-row { display: flex; justify-content: space-between; gap: 12px; margin: 15px 0 10px; flex-wrap: wrap; }
+        .action-card { flex: 1; background: rgba(255,255,255,0.07); border-radius: 20px; padding: 10px 5px; text-align: center; cursor: pointer; transition: all 0.1s ease; border: 1px solid rgba(108, 76, 245, 0.4); backdrop-filter: blur(4px); }
+        .action-card i { font-size: 24px; display: block; margin-bottom: 6px; color: var(--gold-color); }
+        .action-card span { font-size: 11px; font-weight: 600; display: block; }
+        .action-card:active { transform: scale(0.96); background: rgba(108,76,245,0.3); }
+        .wheel-container { position: relative; width: 260px; height: 260px; margin: 20px auto; filter: drop-shadow(0 0 20px rgba(108, 76, 245, 0.55)); }
+        .wheel-arrow { position: absolute; top: -4px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 13px solid transparent; border-right: 13px solid transparent; border-top: 28px solid #FFD700; z-index: 20; }
+        .wheel-svg { width: 100%; height: 100%; overflow: visible; }
+        .spin-button, .buy-stars-button { background: var(--gradient-primary); color: white; border: none; padding: 12px 20px; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: 40px; margin: 8px 0; display: inline-flex; align-items: center; gap: 8px; width: 100%; justify-content: center; border: 2px solid var(--gold-color); }
+        .buy-stars-button { background: linear-gradient(135deg, #FFD166, #FF9E64); color: #1A1A2E; }
+        .invite-button { background: var(--gradient-gold); color: #000; padding: 14px 20px; border-radius: 40px; font-weight: bold; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; border: 2px solid white; }
+        .invite-progress-card { background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.15)); border-radius: 25px; padding: 20px; margin: 15px 0; border: 2px solid var(--gold-color); }
+        .invite-icons { display: flex; justify-content: center; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+        .invite-circle { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,215,0,0.1); border: 2px solid var(--gold-color); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .invite-circle.completed { background: var(--gradient-gold); color: #000; }
+        .golden-spin-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: flex; justify-content: center; align-items: center; z-index: 10000; opacity: 0; visibility: hidden; transition: opacity 0.1s; }
+        .golden-spin-modal.active { opacity: 1; visibility: visible; }
+        .golden-spin-content { background: var(--gradient-card); padding: 25px; border-radius: 35px; border: 3px solid var(--gold-color); text-align: center; max-width: 320px; }
+        .live-ticker { background: rgba(0,0,0,0.5); padding: 8px; border-radius: 25px; margin-bottom: 10px; overflow: hidden; white-space: nowrap; }
+        .ticker-content { display: inline-block; animation: tickerScroll 12s linear infinite; }
+        @keyframes tickerScroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .code-value { font-size: 18px; font-weight: bold; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px; cursor: pointer; }
+        .chat-container { height: 350px; display: flex; flex-direction: column; background: rgba(0,0,0,0.2); border-radius: 20px; overflow: hidden; margin-bottom: 10px; }
+        .chat-messages { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+        .chat-message { background: rgba(255,255,255,0.08); border-radius: 18px; padding: 8px 12px; max-width: 85%; align-self: flex-start; text-align: left; border-left: 3px solid var(--primary-color); }
+        .chat-message.my-message { align-self: flex-end; background: var(--gradient-primary); border-left-color: var(--gold-color); }
+        .chat-sender { font-size: 11px; font-weight: bold; color: var(--gold-color); margin-bottom: 4px; cursor: pointer; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .chat-sender:hover { text-decoration: underline; }
+        .chat-text { font-size: 13px; word-break: break-word; }
+        .chat-time { font-size: 9px; color: var(--text-secondary); margin-top: 4px; text-align: right; }
+        .chat-input-area { display: flex; gap: 8px; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 30px; margin-top: 5px; }
+        .chat-input { flex: 1; background: var(--card-bg); border: 1px solid var(--primary-color); border-radius: 30px; padding: 10px 15px; color: white; font-family: inherit; outline: none; }
+        .chat-send-btn { background: var(--gradient-primary); border: none; border-radius: 30px; padding: 0 18px; color: white; font-weight: bold; cursor: pointer; }
+        .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; justify-content: center; }
+        .badge-item { background: rgba(255,215,0,0.1); border-radius: 30px; padding: 6px 14px; font-size: 12px; border: 1px solid var(--gold-color); }
+        .streak-card { background: var(--gradient-primary); border-radius: 20px; padding: 12px; margin-top: 12px; text-align: center; }
+        .friends-list { max-height: 400px; overflow-y: auto; }
+        .friend-item { display: flex; align-items: center; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 20px; margin-bottom: 10px; cursor: pointer; transition: all 0.08s; }
+        .friend-item:hover { background: rgba(255,255,255,0.1); }
+        .friend-info { display: flex; align-items: center; gap: 12px; flex: 1; }
+        .friend-avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .friend-name { font-weight: bold; }
+        .friend-username { font-size: 11px; color: var(--text-secondary); }
+        .friend-status { font-size: 10px; padding: 4px 8px; border-radius: 20px; background: rgba(6,214,160,0.2); color: var(--success-color); }
+        .dm-container { margin-top: 15px; border-top: 1px solid var(--primary-color); padding-top: 15px; }
+        .dm-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+        .back-btn { background: var(--button-bg); border: none; padding: 6px 12px; border-radius: 20px; color: white; cursor: pointer; }
+        .dm-messages { height: 250px; overflow-y: auto; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 20px; margin-bottom: 10px; }
+        .dm-message { padding: 8px 12px; margin: 5px 0; border-radius: 15px; max-width: 85%; }
+        .dm-message.sent { background: var(--gradient-primary); align-self: flex-end; margin-left: auto; text-align: right; }
+        .dm-message.received { background: rgba(255,255,255,0.08); align-self: flex-start; }
+        .dm-input-area { display: flex; gap: 8px; }
+        .dm-input { flex: 1; background: var(--card-bg); border: 1px solid var(--primary-color); border-radius: 25px; padding: 8px 12px; color: white; }
+        .send-dm-btn { background: var(--gradient-primary); border: none; border-radius: 25px; padding: 8px 15px; color: white; cursor: pointer; }
+        .add-friend-btn { background: var(--gradient-success); border: none; padding: 4px 12px; border-radius: 20px; color: white; font-size: 11px; cursor: pointer; }
+        .msg-progress-bar { background: rgba(255,255,255,0.1); border-radius: 12px; height: 6px; margin: 8px 0; overflow: hidden; }
+        .msg-progress-fill { background: var(--gradient-gold); height: 100%; width: 0%; transition: width 0.2s; }
+        .chat-reward-badge { background: var(--success-color); border-radius: 12px; padding: 2px 8px; font-size: 10px; display: inline-block; margin-left: 6px; }
+        .hidden-ticket-notification { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--gradient-gold); color: #000; padding: 15px 25px; border-radius: 40px; z-index: 1000; display: none; animation: fadeInOut 0.5s ease; font-weight: bold; }
+        @keyframes fadeInOut { 0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); } 20% { opacity: 1; transform: translate(-50%, -50%) scale(1); } 100% { opacity: 0; } }
+        
+        /* CRASH GAME STYLES */
+        .crash-canvas-container { position: relative; margin: 15px auto; }
+        .crash-canvas { background: radial-gradient(ellipse at 25% 20%, #111c3a, #010514); border-radius: 28px; box-shadow: 0 12px 28px black; display: block; margin: 0 auto; width: 100%; height: auto; }
+        .crash-multiplier-badge { position: absolute; top: 12px; left: 18px; font-size: 38px; font-weight: 900; font-family: monospace; background: linear-gradient(135deg, #f0fcff, #5effbc); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: 0 0 15px rgba(0,255,200,0.7); pointer-events: none; }
+        .crash-bet-control { background: #060d1f; padding: 8px 16px; border-radius: 80px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 12px 0; border: 1px solid #2c5f9e; }
+        .crash-bet-control label { font-weight: 700; color: #7bc5ff; font-size: 13px; }
+        .crash-bet-control input { background: #010a18; border: 1px solid #2f6ea2; padding: 8px 12px; border-radius: 36px; color: #f0fcff; font-weight: bold; font-size: 1rem; width: 90px; text-align: center; outline: none; }
+        .crash-actions { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+        .crash-btn { flex: 1; background: linear-gradient(95deg, #00c2e0, #0066aa); border: none; font-weight: bold; font-size: 0.9rem; padding: 10px; border-radius: 40px; cursor: pointer; color: white; }
+        .cashout-btn { background: linear-gradient(95deg, #f5b042, #e67e22); color: #141c2c; }
+        .buy-bet-btn { background: linear-gradient(135deg, #FFD166, #FF9E64); color: #1A1A2E; flex: 1; }
+        .withdraw-btn { background: linear-gradient(135deg, #06D6A0, #0ACF83); color: #1A1A2E; flex: 1; }
+        .countdown-timer { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); border-radius: 60px; padding: 10px 24px; font-size: 48px; font-weight: 800; color: #ffdf70; border: 2px solid #ffcc44; white-space: nowrap; pointer-events: none; z-index: 25; }
+        .stars-display { background: rgba(0,0,0,0.3); border-radius: 30px; padding: 10px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+        
+        @media (max-width: 480px) { .wheel-container { width: 220px; height: 220px; } .navbar button { padding: 6px 8px; font-size: 10px; min-width: 50px; } }
     </style>
 </head>
 <body>
+<div id="loader-wrapper"><div class="loader-spinner"></div><div>Loading Crypto Rewards...</div></div>
+<div id="goldenSpinModal" class="golden-spin-modal"><div class="golden-spin-content"><div style="font-size:50px;">🎰</div><div style="font-size:24px;font-weight:bold;color:var(--gold-color);">$1 GOLDEN SPIN</div><div id="goldenWheel" style="width:140px;height:140px;margin:15px auto;border-radius:50%;border:4px solid var(--gold-color);background:conic-gradient(#4CAF50 0deg 180deg,#9E9E9E 180deg 360deg);position:relative;"><span style="position:absolute;top:30%;left:65%;background:rgba(0,0,0,0.5);padding:2px 8px;border-radius:15px;">$1</span><span style="position:absolute;top:70%;left:35%;background:rgba(0,0,0,0.5);padding:2px 8px;border-radius:15px;">$0</span></div><div id="goldenResult"></div><div id="goldenTryAgain" style="display:none;">⏰ COME BACK TOMORROW ⏰</div><button onclick="closeGoldenSpinModal()" style="background:var(--gradient-gold);color:#000;border:none;padding:10px 25px;border-radius:40px;margin-top:10px;">OK</button></div></div>
 
-<div id="goldenModal" class="golden-modal">
-    <div style="background:#1A1A2E; padding:25px; border-radius:40px; border:3px solid var(--gold); text-align:center; max-width:300px;">
-        <div style="font-size:48px;">🎰</div>
-        <div style="font-size:24px; font-weight:bold; color:var(--gold);">$1 GOLDEN SPIN</div>
-        <div id="goldenWheel" style="width:130px; height:130px; margin:15px auto; border-radius:50%; border:3px solid gold; background:conic-gradient(#4CAF50 0deg 180deg,#9E9E9E 180deg 360deg); position:relative;"></div>
-        <div id="goldenResult" style="margin:10px 0;"></div>
-        <button onclick="closeGoldenModal()" style="background:var(--gold); border:none; padding:10px 25px; border-radius:40px; font-weight:bold;">OK</button>
+<!-- SPIN TAB -->
+<div id="spin-game" class="game-container">
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;">
+        <img src="https://i.ibb.co/9knDKmB6/photo-2025-03-12-19-33-09-modified.png" style="width:40px;height:40px;border-radius:50%;">
+        <h1>SPIN & WIN</h1>
+        <img src="https://i.ibb.co/9knDKmB6/photo-2025-03-12-19-33-09-modified.png" style="width:40px;height:40px;border-radius:50%;">
     </div>
-</div>
-
-<div id="spinTab" class="game-container">
-    <div style="text-align:center;"><h1 style="background:linear-gradient(135deg,#6C4CF5,#FFD166); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">🎡 SPIN & WIN CRYPTO</h1></div>
-    <div class="wheel-container">
-        <div class="wheel-arrow"></div>
-        <svg width="260" height="260" viewBox="-8 -8 246 246" id="wheelSvg">
-            <defs><radialGradient id="hub" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff" stop-opacity="0.2"/></radialGradient></defs>
-            <g style="transform-origin:115px 115px; transition: transform 2.2s cubic-bezier(0.2,0.9,0.3,1);">
-                <path d="M 115 4 A 111 111 0 0 1 211.12 59.5 L 134.05 104 A 22 22 0 0 0 115 93 Z" fill="#26A17B"/><text x="148" y="52" fill="white" font-size="10" font-weight="bold">1 USDT</text>
-                <path d="M 211.12 59.5 A 111 111 0 0 1 211.12 170.5 L 134.05 126 A 22 22 0 0 0 134.05 104 Z" fill="#CC2B5E"/><text x="195" y="115" fill="white" font-size="9">500 BTTC</text>
-                <path d="M 211.12 170.5 A 111 111 0 0 1 115 226 L 115 137 A 22 22 0 0 0 134.05 126 Z" fill="#F4D03F"/><text x="148" y="192" fill="white" font-size="9">500 LUNC</text>
-                <path d="M 115 226 A 111 111 0 0 1 18.87 170.5 L 95.94 126 A 22 22 0 0 0 115 137 Z" fill="#00C853"/><text x="65" y="192" fill="white" font-size="9">100 PEPE</text>
-                <path d="M 18.87 170.5 A 111 111 0 0 1 18.87 59.5 L 95.94 104 A 22 22 0 0 0 95.94 126 Z" fill="#6C4CF5"/><text x="48" y="115" font-size="24">🎟️</text>
-                <path d="M 18.87 59.5 A 111 111 0 0 1 115 4 L 115 93 A 22 22 0 0 0 95.94 104 Z" fill="#37474F"/><text x="82" y="52" font-size="20">↺</text>
-                <circle cx="115" cy="115" r="27" fill="#0F0F23" stroke="#FFD700" stroke-width="2"/>
-                <text x="115" y="119" text-anchor="middle" font-size="15">🎯</text>
-            </g>
-        </svg>
-    </div>
-    <button class="spin-button" id="spinBtn" disabled><i class="fas fa-sync-alt"></i> SPIN (<span id="ticketCount">0</span>)</button>
-    <button class="spin-button" id="goldenSpinBtn" onclick="activateGoldenSpin()" style="margin-top:5px; background:#FFD166; color:#000;" disabled>👑 GOLDEN SPIN (0/5)</button>
     
-    <div class="invite-card">
-        <div style="display:flex; justify-content:space-between;"><span>👥 Friends invited</span><span id="inviteCountDisplay">0/5</span></div>
-        <div class="invite-icons" id="inviteIcons"></div>
-        <button class="spin-button" onclick="inviteFriend()" style="background:#FFD166; color:#000;">📢 INVITE FRIEND</button>
-        <p style="font-size:12px; margin-top:8px;">Invite 5 friends → $1 Golden Spin!</p>
-    </div>
-    <div id="spinResult" style="margin-top:12px;"></div>
-</div>
-
-<div id="chatTab" class="game-container" style="display:none;">
-    <h2><i class="fas fa-comments"></i> GLOBAL CHAT 🎁</h2>
-    <div class="chat-container">
-        <div class="chat-messages" id="chatMsgs"></div>
-        <div class="chat-input-area">
-            <input type="text" id="chatInput" class="chat-input" placeholder="Type message...">
-            <button onclick="sendMessage()" style="background:var(--primary); border:none; border-radius:30px; padding:0 18px; color:white;">Send</button>
+    <div class="crypto-header">
+        <div class="header-content">
+            <span>🌱 RedPacket MAY</span>
+            <span class="header-divider">|</span>
+            <span class="bonus-code-mini" onclick="copyBonusCode(this)" data-code="BPO9OUFVDF">
+                BPO9OUFVDF 🎁
+            </span>
         </div>
     </div>
-    <div style="margin-top:8px;"><span>💬 Msg progress: </span><span id="msgProgress">0/3</span> → +1 Ticket</div>
-</div>
-
-<div id="feedTab" class="game-container" style="display:none;">
-    <h2><i class="fas fa-newspaper"></i> LIVE FEED</h2>
-    <textarea id="feedInput" rows="2" placeholder="Share your win..." style="width:100%; background:#1A1A2E; border:1px solid #6C4CF5; border-radius:20px; padding:12px; color:white;"></textarea>
-    <button class="spin-button" onclick="postFeed()" style="margin-top:8px;">POST</button>
-    <div id="feedContainer" style="max-height:400px; overflow-y:auto; margin-top:12px;"></div>
-</div>
-
-<div id="profileTab" class="game-container" style="display:none;">
-    <div style="text-align:center;"><span style="font-size:56px;">👤</span><h2 id="profileName">Crypto Player</h2><p id="profileUsername">@user</p></div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:15px 0;">
-        <div style="background:#2D2D44; padding:12px; border-radius:20px;"><div id="statSpins">0</div><div>Total Spins</div></div>
-        <div style="background:#2D2D44; padding:12px; border-radius:20px;"><div id="statWins">0</div><div>Codes Won</div></div>
-        <div style="background:#2D2D44; padding:12px; border-radius:20px;"><div id="statTickets">0</div><div>Tickets</div></div>
-        <div style="background:#2D2D44; padding:12px; border-radius:20px;"><div id="statInvites">0</div><div>Invites</div></div>
+    
+    <div class="live-ticker"><div class="ticker-content" id="tickerContent">🏆 Last winner: @crypto_winner won 1 USDT</div></div>
+    <div class="wheel-container"><div class="wheel-arrow"></div><svg width="260" height="260" viewBox="-8 -8 246 246" class="wheel-svg" id="wheel"><defs><radialGradient id="hubGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff" stop-opacity="0.15"/><stop offset="100%" stop-color="#000" stop-opacity="0.3"/></radialGradient><radialGradient id="sheen" cx="35%" cy="30%" r="65%"><stop offset="0%" stop-color="#fff" stop-opacity="0.18"/><stop offset="60%" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><g style="transform-origin:115px 115px;transition:transform 1.8s cubic-bezier(0.2,0.9,0.3,1);"><g><path d="M 115 4 A 111 111 0 0 1 211.1288198200727 59.50000000000001 L 134.05255888325766 104 A 22 22 0 0 0 115 93 Z" fill="#26A17B" stroke="#0F0F23" stroke-width="2"/><circle cx="148.3" cy="57.322708107956394" r="17" fill="white" opacity="0.92"/><image href="https://i.ibb.co/wNMtnBY5/tether-usdt-logo.png" x="134.3" y="43.322708107956394" width="28" height="28"/><text x="161.065" y="35.21307954933968" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="10" transform="rotate(30, 161.065, 35.21307954933968)">1 USDT</text><line x1="115" y1="115" x2="115" y2="4" stroke="#0F0F23" stroke-width="2.5"/></g><g><path d="M 211.1288198200727 59.50000000000001 A 111 111 0 0 1 211.1288198200727 170.5 L 134.05255888325766 126 A 22 22 0 0 0 134.05255888325766 104 Z" fill="#CC2B5E" stroke="#0F0F23" stroke-width="2"/><circle cx="181.6" cy="115" r="17" fill="white" opacity="0.92"/><image href="https://s2.coinmarketcap.com/static/img/coins/64x64/16086.png" x="167.6" y="101" width="28" height="28"/><text x="207.13" y="115" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="10" transform="rotate(90, 207.13, 115)">500 BTTC</text><line x1="115" y1="115" x2="211.1288198200727" y2="59.50000000000001" stroke="#0F0F23" stroke-width="2.5"/></g><g><path d="M 211.1288198200727 170.5 A 111 111 0 0 1 115 226 L 115 137 A 22 22 0 0 0 134.05255888325766 126 Z" fill="#F4D03F" stroke="#0F0F23" stroke-width="2"/><circle cx="148.3" cy="172.6772918920436" r="17" fill="white" opacity="0.92"/><image href="https://s2.coinmarketcap.com/static/img/coins/64x64/20314.png" x="134.3" y="158.6772918920436" width="28" height="28"/><text x="161.065" y="194.78692045066032" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="10" transform="rotate(150, 161.065, 194.78692045066032)">500 LUNC</text><line x1="115" y1="115" x2="211.1288198200727" y2="170.5" stroke="#0F0F23" stroke-width="2.5"/></g><g><path d="M 115 226 A 111 111 0 0 1 18.871180179927308 170.5 L 95.94744111674234 126 A 22 22 0 0 0 115 137 Z" fill="#00C853" stroke="#0F0F23" stroke-width="2"/><circle cx="81.70000000000002" cy="172.67729189204363" r="17" fill="white" opacity="0.92"/><image href="https://i.ibb.co/kgFfLWtD/bg-f8f8f8-flat-750x-075-f-pad-750x1000-f8f8f8.jpg" x="67.70000000000002" y="158.67729189204363" width="28" height="28"/><text x="68.93500000000003" y="194.78692045066032" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="10" transform="rotate(210, 68.93500000000003, 194.78692045066032)">100 PEPE</text><line x1="115" y1="115" x2="115" y2="226" stroke="#0F0F23" stroke-width="2.5"/></g><g><path d="M 18.871180179927308 170.5 A 111 111 0 0 1 18.87118017992732 59.499999999999986 L 95.94744111674235 104 A 22 22 0 0 0 95.94744111674234 126 Z" fill="#6C4CF5" stroke="#0F0F23" stroke-width="2"/><circle cx="48.400000000000006" cy="115.00000000000001" r="15" fill="rgba(255,255,255,0.12)"/><text x="48.400000000000006" y="117.00000000000001" text-anchor="middle" dominant-baseline="middle" font-size="26">🎟️</text><text x="22.870000000000005" y="115.00000000000001" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="10" transform="rotate(270, 22.870000000000005, 115.00000000000001)">1 TICKET</text><line x1="115" y1="115" x2="18.871180179927308" y2="170.5" stroke="#0F0F23" stroke-width="2.5"/></g><g><path d="M 18.87118017992732 59.499999999999986 A 111 111 0 0 1 114.99999999999999 4 L 115 93 A 22 22 0 0 0 95.94744111674235 104 Z" fill="#37474F" stroke="#0F0F23" stroke-width="2"/><circle cx="81.69999999999997" cy="57.32270810795641" r="15" fill="rgba(255,255,255,0.12)"/><text x="81.69999999999997" y="59.32270810795641" text-anchor="middle" dominant-baseline="middle" font-size="22">↺</text><text x="68.93499999999996" y="35.213079549339696" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="10" transform="rotate(330, 68.93499999999996, 35.213079549339696)">TRY AGAIN</text><line x1="115" y1="115" x2="18.87118017992732" y2="59.499999999999986" stroke="#0F0F23" stroke-width="2.5"/></g><circle cx="115" cy="115" r="111" fill="url(#sheen)"/><circle cx="115" cy="115" r="27" fill="#0F0F23" stroke="#FFD700" stroke-width="2.5"/><text x="115" y="117" text-anchor="middle" dominant-baseline="middle" font-size="15">🎯</text></g></svg></div>
+    <button class="spin-button" id="spin-btn" onclick="spinWheel()" disabled><i class="fas fa-sync-alt"></i> SPIN NOW (<span id="ticket-count">0</span>)</button>
+    <button class="buy-stars-button" id="buyStarsBtn" onclick="requestBuySpins()"><i class="fas fa-star"></i> BUY 10 SPINS (⭐100 Stars)</button>
+    <div class="action-row">
+        <div class="action-card" onclick="watchAdForTicket()"><i class="fas fa-video"></i><span>🎬 Watch Ad → Ticket</span></div>
+        <div class="action-card" onclick="goToChatForTicket()"><i class="fas fa-comment-dots"></i><span>💬 Chat Ticket</span></div>
+        <div class="action-card" onclick="joinTelegramChannel()"><i class="fab fa-telegram"></i><span>📱 TELEGRAM</span></div>
     </div>
-    <div class="streak-card" style="background:var(--primary); border-radius:20px; padding:12px;">🔥 Daily Streak: <span id="streakDays">0</span> days (Login +1 ticket)</div>
+    <div id="inlineInviteCard" class="invite-progress-card" style="display:none;"><div style="display:flex;justify-content:space-between;"><span>Friends Invited</span><span id="cardInviteCount">0/5</span></div><div class="invite-icons" id="cardInviteIcons"></div><button class="invite-button" id="inviteNowBtn"><i class="fab fa-telegram"></i> INVITE FRIEND</button></div>
+    <div id="spin-result"></div>
+    <div id="adResult" style="margin-top:5px;"></div>
 </div>
 
-<div class="navbar">
-    <button id="navSpin" class="active" onclick="showPage('spinTab')"><i class="fas fa-sync-alt"></i><span>SPIN</span></button>
-    <button id="navChat" onclick="showPage('chatTab')"><i class="fas fa-comments"></i><span>CHAT</span></button>
-    <button id="navFeed" onclick="showPage('feedTab')"><i class="fas fa-newspaper"></i><span>FEED</span></button>
-    <button id="navProfile" onclick="showPage('profileTab')"><i class="fas fa-user"></i><span>PROFILE</span></button>
-</div>
-<div id="notificationToast" class="hidden-notify">✨</div>
-
-<!-- SEO FOOTER -->
-<div class="seo-footer">
-    <h3>💰 Earn Free Crypto Daily - Spin & Win Bitcoin, Ethereum & XRP</h3>
-    <p>✅ 100% free crypto rewards platform. Spin the wheel, complete tasks, invite friends, and win real cryptocurrency codes (BTC, ETH, USDT, XRP). Instant redemption codes, no deposit required. Join thousands of winners now!</p>
-    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;">
-        <span class="seo-keyword" style="background:#FFD16620; padding:4px 12px; border-radius:30px;">free bitcoin</span>
-        <span class="seo-keyword" style="background:#FFD16620; padding:4px 12px; border-radius:30px;">crypto airdrop</span>
-        <span class="seo-keyword" style="background:#FFD16620; padding:4px 12px; border-radius:30px;">play to earn</span>
-        <span class="seo-keyword" style="background:#FFD16620; padding:4px 12px; border-radius:30px;">binance codes</span>
+<!-- CRASH TAB (PSYCHOLOGICAL ADDICTIVE EDGE) -->
+<div id="crash-tab" class="game-container" style="display:none;">
+    <h2><i class="fas fa-plane"></i> CRASH PLANE <span style="font-size:12px;">⭐ Bet Stars, Fly High!</span></h2>
+    <div class="stars-display">
+        <span><i class="fas fa-star" style="color:var(--gold-color);"></i> MY STARS:</span>
+        <span id="crashStarsBalance" style="font-weight:bold;color:var(--gold-color);font-size:20px;">100</span>
+        <button onclick="withdrawStars()" style="background:var(--gradient-success);border:none;border-radius:30px;padding:5px 15px;color:#000;font-weight:bold;font-size:12px;cursor:pointer;"><i class="fas fa-money-bill-wave"></i> WITHDRAW</button>
     </div>
-    <p style="margin-top:12px; font-size:11px;">© 2025 Crypto Spin Hub — Free rewards platform, no real money gambling.</p>
+    <div class="crash-canvas-container" style="position:relative;">
+        <canvas id="crashCanvas" width="450" height="350" class="crash-canvas"></canvas>
+        <div id="crashMultiplierDisplay" class="crash-multiplier-badge">1.00x</div>
+        <div id="crashCountdown" class="countdown-timer" style="display:none;">3</div>
+    </div>
+    <div class="crash-bet-control">
+        <label>✈️ BET STARS:</label>
+        <input type="number" id="crashBetAmount" value="10" step="5" min="5">
+        <div style="font-size:12px; color:#FFD166;">Win = Bet × Multiplier</div>
+    </div>
+    <div class="crash-actions">
+        <button class="crash-btn" id="crashStartBtn" onclick="startCrashRound()">🚀 START FLIGHT</button>
+        <button class="crash-btn cashout-btn" id="cashoutCrashBtn" onclick="cashoutCrash()">💰 CASH OUT</button>
+        <button class="crash-btn buy-bet-btn" id="buyCrashBetBtn" onclick="requestBuyCrashBets()"><i class="fas fa-star"></i> BUY 10 BETS (⭐100 Stars)</button>
+    </div>
+    <div id="crashLastResult" style="font-size:12px; margin-top:12px; color:var(--text-secondary);">Latest crash: -</div>
 </div>
+
+<div id="chat-tab" class="game-container" style="display:none;"><h2><i class="fas fa-comments"></i> GLOBAL CHAT <span style="font-size:12px;">🎁 Earn Tickets!</span></h2><div class="chat-container"><div class="chat-messages" id="chatMessages"></div><div class="chat-input-area"><input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." maxlength="200"><button class="chat-send-btn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button></div></div><div class="msg-progress-bar"><div class="msg-progress-fill" id="msgProgressFill"></div></div><div id="chatRewardStatus" style="font-size:12px;color:var(--text-secondary);display:flex;justify-content:space-between;"><span>💬 Messages towards next ticket:</span><span id="msgCounterDisplay">0/3</span></div><p style="font-size:11px;color:var(--text-secondary);margin-top:5px;"><i class="fab fa-telegram"></i> Click username to add friend</p></div>
+<div id="friends-tab" class="game-container" style="display:none;"><h2><i class="fas fa-user-friends"></i> MY FRIENDS</h2><div id="friendsList" class="friends-list"></div><div id="dmSection" class="dm-container" style="display:none;"><div class="dm-header"><button class="back-btn" onclick="closeDM()"><i class="fas fa-arrow-left"></i> Back</button><div><span id="dmFriendName"></span></div></div><div id="dmMessages" class="dm-messages"></div><div class="dm-input-area"><input type="text" id="dmInput" class="dm-input" placeholder="Type a message..."><button class="send-dm-btn" onclick="sendDirectMessage()"><i class="fas fa-paper-plane"></i></button></div></div></div>
+<div id="profile-tab" class="game-container" style="display:none;"><div class="profile-header" style="display:flex; align-items:center; gap:15px; margin-bottom:20px;"><div class="profile-avatar" style="font-size:56px;">👤</div><div><div id="profile-name" style="font-size:22px; font-weight:bold;">Player</div><div id="profile-username" style="color:var(--text-secondary);">@user</div><div id="friendsCountProfile" style="font-size:13px; background:var(--gradient-gold); display:inline-block; padding:2px 12px; border-radius:20px;">👥 0 friends</div></div></div><div class="stats-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:20px;"><div class="stat-card" style="background:rgba(255,255,255,0.05); border-radius:20px; padding:12px;"><div id="stat-spins" style="font-size:28px; font-weight:bold;">0</div><div>Total Spins</div></div><div class="stat-card" style="background:rgba(255,255,255,0.05); border-radius:20px; padding:12px;"><div id="stat-wins" style="font-size:28px; font-weight:bold;">0</div><div>Total Wins</div></div><div class="stat-card" style="background:rgba(255,255,255,0.05); border-radius:20px; padding:12px;"><div id="stat-tickets" style="font-size:28px; font-weight:bold;">0</div><div>Tickets Owned</div></div><div class="stat-card" style="background:rgba(255,255,255,0.05); border-radius:20px; padding:12px;"><div id="stat-friends" style="font-size:28px; font-weight:bold;">0</div><div>Friends Invited</div></div></div><div class="streak-card"><i class="fas fa-fire" style="color:orange;"></i> Daily Streak: <span id="streakDays">0</span> days <div style="font-size:12px;">Login each day to earn +1 Ticket!</div></div><div style="margin-top:15px;"><h4>🏆 Collector Badges</h4><div class="badge-grid" id="badgeContainer"></div></div></div>
+
+<div class="navbar"><button id="spin-nav" onclick="showPage('spin-game')" class="active"><i class="fas fa-sync-alt"></i><span>SPIN</span></button><button id="crash-nav" onclick="showPage('crash-tab')"><i class="fas fa-plane"></i><span>CRASH</span></button><button id="chat-nav" onclick="showPage('chat-tab')"><i class="fas fa-comments"></i><span>CHAT</span></button><button id="friends-nav" onclick="showPage('friends-tab')"><i class="fas fa-users"></i><span>FRIENDS</span></button><button id="profile-nav" onclick="showPage('profile-tab')"><i class="fas fa-user"></i><span>PROFILE</span></button></div>
+<div id="hidden-ticket-notification" class="hidden-ticket-notification"></div>
 
 <script>
-    // Firebase config (same as code1 but using demo db functionality, works for cross-user chat/feed)
-    const firebaseConfig = {
-        apiKey: "AIzaSyBnHl7ilUrnKua1cXOIlTQbev-t33uovPI",
-        authDomain: "crypto-spin-game.firebaseapp.com",
-        databaseURL: "https://crypto-spin-game-default-rtdb.firebaseio.com",
-        projectId: "crypto-spin-game",
-        storageBucket: "crypto-spin-game.firebasestorage.app",
-        messagingSenderId: "42389832000",
-        appId: "1:42389832000:web:3024d7e7a15dcab97cbaa5"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
+// Firebase configuration
+const firebaseConfig = { apiKey: "AIzaSyBnHl7ilUrnKua1cXOIlTQbev-t33uovPI", authDomain: "crypto-spin-game.firebaseapp.com", databaseURL: "https://crypto-spin-game-default-rtdb.firebaseio.com", projectId: "crypto-spin-game", storageBucket: "crypto-spin-game.firebasestorage.app", messagingSenderId: "42389832000", appId: "1:42389832000:web:3024d7e7a15dcab97cbaa5" };
+firebase.initializeApp(firebaseConfig); const db = firebase.database();
 
-    // User identity (Telegram or fallback)
-    const tg = window.Telegram?.WebApp;
-    if(tg) { tg.ready(); tg.expand(); }
-    const user = (()=>{
-        try {
-            const u = tg?.initDataUnsafe?.user;
-            if(u) return { id: u.id, username: u.username || `user_${u.id}`, firstName: u.first_name || 'Player' };
-        } catch(e) {}
-        let savedId = localStorage.getItem('userId');
-        if(!savedId) savedId = 'user_'+Date.now()+'_'+Math.floor(Math.random()*9999);
-        return { id: savedId, username: `crypto_${Math.floor(Math.random()*10000)}`, firstName: 'Player' };
-    })();
-    document.getElementById('profileName').innerText = user.firstName;
-    document.getElementById('profileUsername').innerText = `@${user.username}`;
+// Simpler web user detection (no Telegram dependency)
+const user = (()=>{
+    let stored = localStorage.getItem('webUser');
+    if(stored) return JSON.parse(stored);
+    const newUser = { id: Date.now(), username: `crypto_${Math.floor(Math.random()*10000)}`, firstName: 'Player' };
+    localStorage.setItem('webUser', JSON.stringify(newUser));
+    return newUser;
+})();
 
-    // Game state
-    let tickets = parseInt(localStorage.getItem('spinTickets')) || 0;
-    let totalSpins = parseInt(localStorage.getItem('totalSpins')) || 0;
-    let codesWon = parseInt(localStorage.getItem('codesWon')) || 0;
-    let currentCode = "";
-    let validCodes = ["SHC18BIV","EY0VWHGO","8QR633AF","6MI4RJ1C","ZV73K0JO","KVUEUJHD","R6OMWSNB","SEJFZWBV","7M4OL4J3","7Z6GM6OK"];
-    let completedSpins = JSON.parse(localStorage.getItem('completedSpins')) || [];
-    
-    // Golden invite system
-    let goldenInvites = parseInt(localStorage.getItem('goldenInvites')) || 0;
-    let goldenHasSpun = localStorage.getItem('goldenHasSpun') === 'true';
-    let lastSpinDate = localStorage.getItem('goldenLastSpinDate');
-    const todayStr = new Date().toDateString();
-    if(lastSpinDate !== todayStr) { goldenHasSpun = false; if(lastSpinDate) goldenInvites = 0; localStorage.setItem('goldenHasSpun','false'); localStorage.setItem('goldenInvites','0'); goldenInvites=0; }
-    
-    // streak & chat msg reward
-    let streakDays = parseInt(localStorage.getItem('streakDays')) || 0;
-    let lastLogin = localStorage.getItem('lastLoginDate');
-    if(lastLogin !== todayStr) {
-        let yesterday = new Date(); yesterday.setDate(yesterday.getDate()-1);
-        if(lastLogin === yesterday.toDateString()) streakDays++; else streakDays=1;
-        localStorage.setItem('streakDays', streakDays);
-        localStorage.setItem('lastLoginDate', todayStr);
-        tickets +=1;
-        localStorage.setItem('spinTickets',tickets);
-        showNotif(`🔥 Streak ${streakDays} days! +1 ticket`);
+document.getElementById('profile-name').innerText = user.firstName; document.getElementById('profile-username').innerText = `@${user.username}`;
+
+let starsBalance = parseInt(localStorage.getItem('starsBalance'));
+if(isNaN(starsBalance) || starsBalance === 0) {
+    starsBalance = 100;
+    localStorage.setItem('starsBalance', starsBalance);
+}
+const MIN_WITHDRAW_STARS = 500;
+
+let gameState = { spin: { tickets: parseInt(localStorage.getItem('spinTickets'))||0, totalSpins: parseInt(localStorage.getItem('totalSpins'))||0, codesWon: parseInt(localStorage.getItem('codesWon'))||0, currentCode: '', validCodes: ["HK4K8FFI","VYJK1XTM","RB5GL9M7","03N4ZTFT","PK84TZ0I","BF6E903T","HSPAC56D","P1M0UZD5","WOXNE4KT","5P460VYF"], lastSpinTime:0, completedSpins: JSON.parse(localStorage.getItem('completedSpins'))||[] }, goldenJackpot: { invites: parseInt(localStorage.getItem('goldenInvites'))||0, hasSpun: localStorage.getItem('goldenHasSpun')==='true', lastSpinDate: localStorage.getItem('goldenLastSpinDate')||null }, streak: { lastLogin: localStorage.getItem('lastLoginDate')||'', currentStreak: parseInt(localStorage.getItem('dailyStreak'))||0, streakTicketsClaimed: localStorage.getItem('streakClaimedToday')==='true' }, friends: JSON.parse(localStorage.getItem('friendsList'))||[], friendRequests: JSON.parse(localStorage.getItem('friendRequests'))||[] };
+
+let purchaseInProgressCrash = false;
+let purchaseInProgress = false;
+let crashActive = false, crashCrashed = false, crashCollected = false, crashInterval = null, crashCountdownInterval = null;
+let crashMultiplier = 1, crashPoint = 1.3, crashBet = 10;
+let crashCanvas = document.getElementById('crashCanvas'), crashCtx = crashCanvas.getContext('2d');
+let planeX = 50, planeY = 300, trailPoints = [];
+
+// Rich Ads for website - auto initialization (scripts already loaded in head)
+// Additionally we can call a simple popunder manually for user engagement
+setTimeout(() => {
+    if(window.richads) console.log("RichAds ready");
+}, 1000);
+
+function generateCrashPoint() {
+    let r = Math.random();
+    if (r < 0.12) return parseFloat((5 + Math.random() * 6).toFixed(2));
+    else if (r < 0.28) return parseFloat((2.2 + Math.random() * 2.8).toFixed(2));
+    else return parseFloat((1.04 + Math.random() * 0.91).toFixed(2));
+}
+
+function updateStarsUI() { 
+    document.getElementById('crashStarsBalance').innerText = starsBalance;
+    localStorage.setItem('starsBalance', starsBalance);
+}
+
+async function requestBuyCrashBets() {
+    if(purchaseInProgressCrash) return;
+    purchaseInProgressCrash = true;
+    const btn = document.getElementById('buyCrashBetBtn');
+    if(btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Processing...'; }
+    setTimeout(() => {
+        starsBalance += 100;
+        updateStarsUI();
+        showNotification("✅ +100 Stars added! Enjoy crash bets.");
+        createConfetti();
+        purchaseInProgressCrash = false;
+        if(btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-star"></i> BUY 10 BETS (⭐100 Stars)'; }
+    }, 500);
+}
+
+function watchAdForTicket() {
+    showNotification("🎫 +1 Ticket! (Ad simulation - web monetization active)");
+    gameState.spin.tickets += 1;
+    localStorage.setItem('spinTickets', gameState.spin.tickets);
+    updateSpinUI();
+    updateProfileUI();
+    createConfetti();
+}
+
+function withdrawStars() {
+    if(starsBalance < MIN_WITHDRAW_STARS) {
+        showNotification(`❌ Minimum withdrawal is ${MIN_WITHDRAW_STARS} Stars! You have ${starsBalance} Stars.`);
+        return;
     }
-    let msgCount = parseInt(localStorage.getItem(`chatMsg_${user.id}`)) || 0;
-    let totalChatTickets = parseInt(localStorage.getItem(`chatTicketsEarned_${user.id}`)) || 0;
-    
-    function updateUI() {
-        document.getElementById('ticketCount').innerText = tickets;
-        document.getElementById('spinBtn').disabled = tickets < 1;
-        document.getElementById('statSpins').innerText = totalSpins;
-        document.getElementById('statWins').innerText = codesWon;
-        document.getElementById('statTickets').innerText = tickets;
-        document.getElementById('statInvites').innerText = goldenInvites;
-        document.getElementById('streakDays').innerText = streakDays;
-        document.getElementById('inviteCountDisplay').innerText = `${goldenInvites}/5`;
-        let goldenBtn = document.getElementById('goldenSpinBtn');
-        if(goldenInvites >=5 && !goldenHasSpun) {
-            goldenBtn.disabled = false; goldenBtn.innerText = '✨ GOLDEN SPIN READY ✨'; goldenBtn.style.background="#FFD700";
-        } else if(goldenHasSpun) { goldenBtn.disabled = true; goldenBtn.innerText = '⏰ GOLDEN SPIN (Done Today)'; goldenBtn.style.background="#4A4A6A"; }
-        else { goldenBtn.disabled = true; goldenBtn.innerText = `👑 GOLDEN SPIN (${goldenInvites}/5)`; goldenBtn.style.background="#FFD166"; }
-        renderInviteIcons();
+    let amount = Math.floor(starsBalance);
+    if(confirm(`Withdraw ${amount} Stars? (Demo: Stars will reset to 0)`)) {
+        starsBalance = 0;
+        updateStarsUI();
+        showNotification(`✅ Successfully withdrew ${amount} Stars! (Demo mode)`);
+        createConfetti();
     }
-    
-    function renderInviteIcons() {
-        const container = document.getElementById('inviteIcons');
-        if(!container) return;
-        container.innerHTML = '';
-        for(let i=0;i<5;i++) {
-            let cls = i < goldenInvites ? 'invite-circle completed' : 'invite-circle';
-            container.innerHTML += `<div class="${cls}">${i < goldenInvites ? '✓' : (i+1)}</div>`;
-        }
-    }
-    
-    function spinWheel() {
-        if(tickets < 1) return showNotif("Need tickets! Play or invite friends.");
-        tickets--;
-        totalSpins++;
-        localStorage.setItem('spinTickets', tickets);
-        localStorage.setItem('totalSpins', totalSpins);
-        updateUI();
-        
-        const wheelGroup = document.querySelector('#wheelSvg g');
-        const deg = Math.floor(Math.random() * 3600) + 1800;
-        wheelGroup.style.transform = `rotate(${deg}deg)`;
-        wheelGroup.style.transition = 'transform 2.2s cubic-bezier(0.2,0.9,0.3,1)';
-        setTimeout(() => {
-            let index = completedSpins.length % validCodes.length;
-            let code = validCodes[index];
-            if(!completedSpins.includes(index)) completedSpins.push(index);
-            localStorage.setItem('completedSpins', JSON.stringify(completedSpins));
-            currentCode = code;
-            codesWon++;
-            localStorage.setItem('codesWon', codesWon);
-            document.getElementById('spinResult').innerHTML = `<div class="code-value" onclick="copyCode()">🎁 ${code} 🎁<br><span style="font-size:12px;">Click to copy</span></div>`;
-            createConfetti();
-            updateUI();
-        }, 2100);
-    }
-    
-    function copyCode() { if(currentCode) { navigator.clipboard.writeText(currentCode); showNotif("✅ Code copied!"); } }
-    
-    function inviteFriend() {
-        const link = `https://t.me/share/url?url=${encodeURIComponent(window.location.href + '?ref='+user.id)}&text=🚀 Spin to win free crypto! Join me!`;
-        window.open(link, '_blank');
-        showNotif("Share link with friends! They get +1 invite for you.");
-    }
-    
-    function activateGoldenSpin() {
-        if(goldenInvites < 5 || goldenHasSpun) { showNotif("Need 5 invites or already spun today"); return; }
-        document.getElementById('goldenModal').classList.add('active');
-        const goldenWheelDiv = document.getElementById('goldenWheel');
-        const randDeg = Math.floor(Math.random() * 360) + 720;
-        goldenWheelDiv.style.transition = 'transform 2s';
-        goldenWheelDiv.style.transform = `rotate(${randDeg}deg)`;
-        setTimeout(() => {
-            let isWin = Math.random() < 0.4;
-            const resultDiv = document.getElementById('goldenResult');
-            if(isWin) { resultDiv.innerHTML = '<span style="background:#06D6A0; padding:10px; border-radius:30px;">🎉 YOU WON $1 USDT! 🎉</span>'; }
-            else { resultDiv.innerHTML = '<span style="background:#EF476F; padding:10px; border-radius:30px;">😢 $0... TRY TOMORROW</span>'; }
-            goldenHasSpun = true;
-            localStorage.setItem('goldenHasSpun','true');
-            localStorage.setItem('goldenLastSpinDate', todayStr);
-            goldenInvites = 0;
-            localStorage.setItem('goldenInvites','0');
-            updateUI();
-        }, 2000);
-    }
-    function closeGoldenModal() {
-        document.getElementById('goldenModal').classList.remove('active');
-        document.getElementById('goldenResult').innerHTML = '';
-    }
-    
-    // Chat & Feed logic
-    function sendMessage() {
-        const input = document.getElementById('chatInput');
-        const text = input.value.trim();
-        if(!text) return;
-        const msg = { userId: user.id, username: user.username, text, timestamp: Date.now(), reactions: { like:0 } };
-        db.ref('globalChat').push(msg);
-        input.value = '';
-        msgCount++;
-        localStorage.setItem(`chatMsg_${user.id}`, msgCount);
-        if(msgCount % 3 === 0 && totalChatTickets < 10) {
-            totalChatTickets++;
-            tickets++;
-            localStorage.setItem('spinTickets', tickets);
-            localStorage.setItem(`chatTicketsEarned_${user.id}`, totalChatTickets);
-            updateUI();
-            showNotif("🎫 +1 Ticket from chat!");
-        }
-        document.getElementById('msgProgress').innerText = `${msgCount % 3}/3`;
-    }
-    
-    function postFeed() {
-        const content = document.getElementById('feedInput').value.trim();
-        if(!content) return;
-        const feedItem = { userId: user.id, username: user.username, content, timestamp: Date.now(), likes: 0 };
-        db.ref('feedPosts').push(feedItem);
-        document.getElementById('feedInput').value = '';
-        showNotif("Posted!");
-    }
-    
-    db.ref('globalChat').orderByChild('timestamp').limitToLast(50).on('value', snap => {
-        const msgs = [];
-        snap.forEach(c => msgs.push(c.val()));
-        const container = document.getElementById('chatMsgs');
-        container.innerHTML = msgs.reverse().map(m => `<div class="chat-message ${m.userId === user.id ? 'my-message' : ''}"><strong>@${m.username}</strong><br>${escapeHtml(m.text)}<div style="font-size:10px;">${new Date(m.timestamp).toLocaleTimeString()}</div></div>`).join('');
-        container.scrollTop = container.scrollHeight;
-    });
-    db.ref('feedPosts').orderByChild('timestamp').limitToLast(30).on('value', snap => {
-        const posts = [];
-        snap.forEach(p => posts.push(p.val()));
-        const feedDiv = document.getElementById('feedContainer');
-        feedDiv.innerHTML = posts.reverse().map(p => `<div class="feed-post"><div><strong>@${p.username}</strong> · ${new Date(p.timestamp).toLocaleString()}</div><div>${escapeHtml(p.content)}</div><span>❤️ ${p.likes||0}</span></div>`).join('');
-    });
-    
-    function showPage(id) {
-        const pages = ['spinTab','chatTab','feedTab','profileTab'];
-        pages.forEach(p => { document.getElementById(p).style.display = p===id ? 'block' : 'none'; });
-        document.querySelectorAll('.navbar button').forEach(btn => btn.classList.remove('active'));
-        if(id==='spinTab') document.getElementById('navSpin').classList.add('active');
-        if(id==='chatTab') document.getElementById('navChat').classList.add('active');
-        if(id==='feedTab') document.getElementById('navFeed').classList.add('active');
-        if(id==='profileTab') document.getElementById('navProfile').classList.add('active');
-        if(id==='chatTab') document.getElementById('msgProgress').innerText = `${msgCount % 3}/3`;
-    }
-    
-    function escapeHtml(str) { return String(str).replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; return '&gt;'; }); }
-    function showNotif(msg) { const n=document.getElementById('notificationToast'); n.innerText=msg; n.style.display='block'; setTimeout(()=>n.style.display='none',2000);}
-    function createConfetti() { for(let i=0;i<20;i++){ let c=document.createElement('div'); c.style.cssText=`position:fixed;width:6px;height:6px;background:${['#6C4CF5','#FFD166','#06D6A0'][Math.floor(Math.random()*3)]};left:50%;top:50%;border-radius:50%;pointer-events:none;z-index:9999;`; document.body.appendChild(c); setTimeout(()=>c.remove(),600); } }
-    
-    // Check URL referral
-    function checkReferral() {
-        const params = new URLSearchParams(window.location.search);
-        const refId = params.get('ref');
-        if(refId && refId !== user.id) {
-            const key = `ref_${refId}_${user.id}`;
-            if(!localStorage.getItem(key)) {
-                localStorage.setItem(key,'true');
-                let refInvites = parseInt(localStorage.getItem(`goldenInvites_${refId}`)) || 0;
-                if(refInvites < 5) {
-                    refInvites++;
-                    localStorage.setItem(`goldenInvites_${refId}`, refInvites);
-                    if(refId === user.id) { // self case not needed, but cross-user we store globally but for simplicity we convert to main invites if same session? Actually we need sync: but for demo we maintain per user.
-                        goldenInvites = refInvites;
-                        localStorage.setItem('goldenInvites', goldenInvites);
-                        updateUI();
-                        showNotif(`+1 invite! ${goldenInvites}/5`);
-                    } else { showNotif("You referred a friend! (Invite counted for the referrer)"); }
+}
+
+function resetCrashVisuals(){ crashMultiplier = 1; crashCrashed = false; crashCollected = false; planeX = 50; planeY = 300; trailPoints = []; drawCrashCanvas(); document.getElementById('crashMultiplierDisplay').innerText = "1.00x"; }
+
+function drawCrashCanvas(){
+    if(!crashCtx) return; crashCtx.clearRect(0,0,crashCanvas.width,crashCanvas.height);
+    crashCtx.strokeStyle = "#2f5c9e"; crashCtx.lineWidth = 1;
+    for(let i=0;i<8;i++){ crashCtx.beginPath(); crashCtx.moveTo(30+i*50, crashCanvas.height-25); crashCtx.lineTo(50+i*45, crashCanvas.height-50); crashCtx.stroke(); }
+    if(trailPoints.length>1){ crashCtx.beginPath(); crashCtx.lineWidth=3; crashCtx.strokeStyle="#3effd0"; crashCtx.moveTo(trailPoints[0].x, trailPoints[0].y); for(let i=1;i<trailPoints.length;i++) crashCtx.lineTo(trailPoints[i].x, trailPoints[i].y); crashCtx.stroke(); }
+    crashCtx.save(); crashCtx.font = "36px 'Segoe UI Emoji'"; crashCtx.fillStyle = "#FFFFFF"; crashCtx.shadowBlur = 8; crashCtx.fillText("✈️", planeX-12, planeY-8); crashCtx.restore();
+    crashCtx.font = "bold 18px monospace"; crashCtx.fillStyle = "#ffffaa"; crashCtx.fillText(`${crashMultiplier.toFixed(2)}x`, planeX-5, planeY-22);
+    if(crashCrashed){ crashCtx.globalAlpha=0.8; crashCtx.fillStyle="#ff3366cc"; crashCtx.fillRect(0,0,crashCanvas.width,crashCanvas.height); crashCtx.globalAlpha=1; crashCtx.font="bold 28px monospace"; crashCtx.fillStyle="#fff"; crashCtx.fillText("💥 CRASHED!", crashCanvas.width/2-100, crashCanvas.height/2); }
+    if(crashCollected && !crashActive && !crashCrashed){ crashCtx.fillStyle="#06D6A0cc"; crashCtx.fillRect(0,crashCanvas.height-50,crashCanvas.width,50); crashCtx.fillStyle="white"; crashCtx.font="bold 16px monospace"; crashCtx.fillText(`✔️ Collected ${Math.floor(crashBet * crashMultiplier)} Stars!`, 20, crashCanvas.height-20); }
+}
+
+function startCrashRound(){
+    if(crashActive || document.getElementById('crashCountdown').style.display !== 'none') return;
+    let betVal = parseInt(document.getElementById('crashBetAmount').value);
+    if(isNaN(betVal) || betVal<5) betVal=10;
+    if(betVal > starsBalance){ showNotification("Not enough Stars! Buy bets using the button below."); return; }
+    crashBet = betVal;
+    starsBalance -= crashBet;
+    updateStarsUI();
+    crashPoint = generateCrashPoint();
+    resetCrashVisuals();
+    let countdown = 3;
+    const countdownDiv = document.getElementById('crashCountdown');
+    countdownDiv.style.display = 'flex';
+    countdownDiv.innerText = countdown;
+    if(crashCountdownInterval) clearInterval(crashCountdownInterval);
+    crashCountdownInterval = setInterval(()=>{
+        countdown--;
+        if(countdown<=0){
+            clearInterval(crashCountdownInterval);
+            countdownDiv.style.display = 'none';
+            crashActive = true;
+            crashCrashed = false;
+            crashCollected = false;
+            if(crashInterval) clearInterval(crashInterval);
+            crashInterval = setInterval(()=>{
+                if(!crashActive) return;
+                let inc = 0.05 + (crashMultiplier * 0.02);
+                crashMultiplier += inc;
+                crashMultiplier = parseFloat(crashMultiplier.toFixed(3));
+                document.getElementById('crashMultiplierDisplay').innerText = crashMultiplier.toFixed(2)+"x";
+                planeX = 50 + (crashMultiplier-1)*13;
+                planeY = 300 - (crashMultiplier-1)*5.5;
+                planeX = Math.min(crashCanvas.width-55, Math.max(40, planeX));
+                planeY = Math.min(320, Math.max(55, planeY));
+                if(Math.floor(crashMultiplier*6)%2===0 || trailPoints.length<5) trailPoints.push({ x: planeX+8, y: planeY-4 });
+                if(trailPoints.length>30) trailPoints.shift();
+                if(crashMultiplier >= crashPoint && !crashCollected){
+                    clearInterval(crashInterval); crashActive=false; crashCrashed=true;
+                    document.getElementById('crashLastResult').innerHTML = `Latest crash: ${crashPoint.toFixed(2)}x`;
+                    drawCrashCanvas();
+                    showNotification(`💥 CRASH at ${crashPoint.toFixed(2)}x! You lost ${crashBet} Stars.`);
+                    if(crashPoint > 4) showNotification("💔 SO CLOSE! You almost won a fortune. Next time cashout earlier!");
                 }
-            }
-        }
-        // load local invites for current user
-        let storedInv = localStorage.getItem('goldenInvites');
-        if(storedInv) goldenInvites = parseInt(storedInv);
-        updateUI();
-    }
-    
-    window.spinWheel = spinWheel;
-    window.copyCode = copyCode;
-    window.inviteFriend = inviteFriend;
-    window.activateGoldenSpin = activateGoldenSpin;
-    window.closeGoldenModal = closeGoldenModal;
-    window.sendMessage = sendMessage;
-    window.postFeed = postFeed;
-    window.showPage = showPage;
-    
-    document.getElementById('spinBtn').onclick = spinWheel;
-    document.getElementById('msgProgress').innerText = `${msgCount % 3}/3`;
-    checkReferral();
-    updateUI();
+                drawCrashCanvas();
+            }, 32);
+        } else countdownDiv.innerText = countdown;
+    }, 1000);
+}
+
+function cashoutCrash(){
+    if(!crashActive || crashCollected || crashCrashed){ showNotification("No active flight!"); return; }
+    let winAmount = Math.floor(crashBet * crashMultiplier);
+    starsBalance += winAmount;
+    updateStarsUI();
+    crashCollected = true;
+    crashActive = false;
+    if(crashInterval) clearInterval(crashInterval);
+    drawCrashCanvas();
+    let msg = `🎉 Cashed out! +${winAmount} Stars! (${crashMultiplier.toFixed(2)}x)`;
+    showNotification(msg);
+    if(winAmount > crashBet * 3) createConfetti();
+}
+
+async function requestBuySpins(){
+    if(purchaseInProgress) return;
+    purchaseInProgress=true;
+    const btn=document.getElementById('buyStarsBtn');
+    if(btn){btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Processing...';}
+    setTimeout(()=>{
+        gameState.spin.tickets+=10;
+        localStorage.setItem('spinTickets', gameState.spin.tickets);
+        updateSpinUI();
+        showNotification("✅ +10 Spins!");
+        createConfetti();
+        purchaseInProgress=false;
+        if(btn){btn.disabled=false;btn.innerHTML='<i class="fas fa-star"></i> BUY 10 SPINS (⭐100 Stars)';}
+    },500);
+}
+
+function spinWheel(){ if(gameState.spin.tickets<1) return showNotification("Need tickets!"); if(Date.now()-gameState.spin.lastSpinTime<1000) return showNotification("Wait 1s"); gameState.spin.tickets--; gameState.spin.totalSpins++; gameState.spin.lastSpinTime=Date.now(); localStorage.setItem('spinTickets',gameState.spin.tickets); localStorage.setItem('totalSpins',gameState.spin.totalSpins); updateSpinUI(); let wheel=document.getElementById('wheel'); let deg=Math.floor(Math.random()*3600)+1800; wheel.style.transform=`rotate(${deg}deg)`; setTimeout(()=>{ let randomIndex=Math.floor(Math.random() * gameState.spin.validCodes.length); let code = gameState.spin.validCodes[randomIndex]; gameState.spin.currentCode=code; gameState.spin.codesWon++; localStorage.setItem('codesWon',gameState.spin.codesWon); document.getElementById('spin-result').innerHTML=`<div><div class="code-value" onclick="copyResultCode()">📋 ${code}</div></div><button class="spin-button" onclick="copyResultCode()">COPY CODE</button>`; createConfetti(); updateSpinUI(); updateProfileUI(); },300); }
+
+function copyResultCode(){ if(gameState.spin.currentCode){ navigator.clipboard.writeText(gameState.spin.currentCode); showNotification("Code copied!"); } }
+
+function updateSpinUI(){ let btn=document.getElementById('spin-btn'); if(btn) btn.disabled=gameState.spin.tickets<1; document.getElementById('ticket-count').innerText=gameState.spin.tickets; updateProfileUI(); }
+
+function updateStreakAndLogin(){ let today=new Date().toDateString(); let last=gameState.streak.lastLogin; if(last!==today){ let yesterday=new Date(); yesterday.setDate(yesterday.getDate()-1); if(last===yesterday.toDateString()) gameState.streak.currentStreak++; else gameState.streak.currentStreak=1; gameState.streak.lastLogin=today; if(!gameState.streak.streakTicketsClaimed){ gameState.spin.tickets+=1; localStorage.setItem('spinTickets', gameState.spin.tickets); showNotification(`🔥 Streak ${gameState.streak.currentStreak} days! +1 Ticket`); } gameState.streak.streakTicketsClaimed=true; localStorage.setItem('dailyStreak', gameState.streak.currentStreak); localStorage.setItem('lastLoginDate',today); localStorage.setItem('streakClaimedToday','true'); updateProfileUI(); } else if(!gameState.streak.streakTicketsClaimed){ gameState.streak.streakTicketsClaimed=true; localStorage.setItem('streakClaimedToday','true'); } updateSpinUI(); }
+function updateProfileUI(){ document.getElementById('stat-spins').innerText=gameState.spin.totalSpins; document.getElementById('stat-wins').innerText=gameState.spin.codesWon; document.getElementById('stat-tickets').innerText=gameState.spin.tickets; document.getElementById('stat-friends').innerText=gameState.friends.length; document.getElementById('friendsCountProfile').innerHTML=`👥 ${gameState.friends.length} friends`; document.getElementById('streakDays').innerText=gameState.streak.currentStreak; let days=gameState.streak.currentStreak; let badges=[]; if(days>=365) badges.push('👑 Legendary Collector'); else if(days>=100) badges.push('💎 Diamond Collector'); else if(days>=30) badges.push('🥇 Gold Collector'); else if(days>=7) badges.push('🥈 Silver Collector'); else if(days>=3) badges.push('🥉 Bronze Collector'); else badges.push('🌱 New Collector'); document.getElementById('badgeContainer').innerHTML=badges.map(b=>`<div class="badge-item">${b}</div>`).join(''); }
+function inviteFriendAction(){ let link=`https://t.me/redpacket_gift_bot?start=${user.id}`; window.open(`https://t.me/share/url?url=${encodeURIComponent(link)}&text=Join me on Crypto Spin & Win!`,'_blank'); showNotification("Invite link sent!"); }
+function updateInviteUI(){}
+function showPage(id){ document.getElementById('spin-game').style.display= id==='spin-game'?'block':'none'; document.getElementById('crash-tab').style.display= id==='crash-tab'?'block':'none'; document.getElementById('chat-tab').style.display= id==='chat-tab'?'block':'none'; document.getElementById('friends-tab').style.display= id==='friends-tab'?'block':'none'; document.getElementById('profile-tab').style.display= id==='profile-tab'?'block':'none'; document.querySelectorAll('.navbar button').forEach(btn=>btn.classList.remove('active')); if(id==='spin-game') document.getElementById('spin-nav').classList.add('active'); if(id==='crash-tab') { document.getElementById('crash-nav').classList.add('active'); drawCrashCanvas(); } if(id==='chat-tab') document.getElementById('chat-nav').classList.add('active'); if(id==='friends-tab') document.getElementById('friends-nav').classList.add('active'); if(id==='profile-tab') document.getElementById('profile-nav').classList.add('active'); if(id==='chat-tab') renderChat(); if(id==='friends-tab') renderFriendsList(); if(id==='profile-tab') updateProfileUI(); }
+function createConfetti(){ for(let i=0;i<20;i++){ let c=document.createElement('div'); c.style.cssText=`position:fixed;width:6px;height:6px;background:${['#6C4CF5','#FFD166','#06D6A0','#EF476F'][Math.floor(Math.random()*4)]};left:50%;top:50%;border-radius:50%;pointer-events:none;z-index:9999;`; document.body.appendChild(c); setTimeout(()=>c.remove(),500); } }
+function showNotification(msg){ let n=document.getElementById('hidden-ticket-notification'); n.textContent=msg; n.style.display='block'; setTimeout(()=>n.style.display='none',2000); }
+function closeGoldenSpinModal(){ document.getElementById('goldenSpinModal').classList.remove('active'); }
+function escapeHtml(t){ return String(t).replace(/[&<>]/g,m=>m==='&'?'&amp;':m==='<'?'&lt;':'&gt;'); }
+async function sendFriendRequest(targetUserId,targetUsername,targetName){ showNotification(`Friend request sent to @${targetUsername}`); }
+function acceptFriendRequest(requestId,request){ showNotification(`You are now friends!`); }
+function rejectFriendRequest(requestId){ showNotification("Rejected."); }
+let currentDMUser=null; function openDM(friend){ currentDMUser=friend; document.getElementById('dmFriendName').innerHTML=`<strong>${friend.name}</strong><br><span style="font-size:11px;">@${friend.username}</span>`; document.getElementById('dmSection').style.display='block'; document.getElementById('friendsList').style.display='none'; }
+function closeDM(){ currentDMUser=null; document.getElementById('dmSection').style.display='none'; document.getElementById('friendsList').style.display='block'; }
+function sendDirectMessage(){ const input=document.getElementById('dmInput'); const text=input.value.trim(); if(!text||!currentDMUser) return; showNotification(`DM sent to ${currentDMUser.username}`); input.value=''; }
+function renderFriendsList(){ const container=document.getElementById('friendsList'); if(!container) return; let html='<h3>👥 Your Friends</h3>'; if(gameState.friends.length===0) html+='<div style="text-align:center;padding:40px;">🤝 No friends yet.<br>Add friends from Chat!</div>'; else gameState.friends.forEach(f=>{ html+=`<div class="friend-item" onclick='openDM(${JSON.stringify(f).replace(/'/g, "\\'")})'><div class="friend-info"><div class="friend-avatar">👤</div><div><div class="friend-name">${escapeHtml(f.name)}</div><div class="friend-username">@${escapeHtml(f.username)}</div></div></div><div class="friend-status"><i class="fas fa-comment"></i> DM</div></div>`; }); container.innerHTML=html; }
+let msgStats = JSON.parse(localStorage.getItem(`chatMsgStats_${user.id}`)) || { count: 0, totalTicketsEarned: 0, lastMsgTimestamp: 0 };
+const MAX_TICKETS_FROM_CHAT = 10;
+function updateMsgProgressUI() { let filled = (msgStats.count % 3) / 3 * 100; document.getElementById('msgProgressFill').style.width = `${filled}%`; document.getElementById('msgCounterDisplay').innerHTML = `${msgStats.count % 3}/3`; }
+function awardTicketFromMessages() { if(msgStats.totalTicketsEarned >= MAX_TICKETS_FROM_CHAT) return false; gameState.spin.tickets += 1; msgStats.totalTicketsEarned += 1; localStorage.setItem('spinTickets', gameState.spin.tickets); localStorage.setItem(`chatMsgStats_${user.id}`, JSON.stringify(msgStats)); updateSpinUI(); updateProfileUI(); showNotification(`🎉 +1 Ticket! (${msgStats.totalTicketsEarned}/10 from chat)`); return true; }
+let lastMessageTime = 0;
+function goToChatForTicket() { showPage('chat-tab'); showNotification("💬 Send 3 messages to earn 1 Ticket!"); }
+async function sendChatMessage() { const now = Date.now(); if(now - lastMessageTime < 2000) { showNotification("⏳ Slow down! Wait 2 sec."); return; } const input = document.getElementById('chatInput'); const text = input.value.trim(); if(!text) return; lastMessageTime = now; const newMsg = { id: Date.now(), userId: user.id, username: user.username, text: text, timestamp: Date.now() }; await db.ref('chatMessages').push(newMsg); input.value = ''; msgStats.count += 1; if(msgStats.count % 3 === 0 && msgStats.totalTicketsEarned < MAX_TICKETS_FROM_CHAT) awardTicketFromMessages(); localStorage.setItem(`chatMsgStats_${user.id}`, JSON.stringify(msgStats)); updateMsgProgressUI(); updateSpinUI(); showNotification("Message sent!"); }
+function renderChat() { const container = document.getElementById('chatMessages'); if(!container) return; const messages = chatMessages; container.innerHTML = messages.map(m => `<div class="chat-message ${m.userId === user.id ? 'my-message' : ''}"><div class="chat-sender" onclick="sendFriendRequest('${m.userId}', '${m.username}', '${escapeHtml(m.username)}')">@${escapeHtml(m.username)} <span style="font-size:9px;">➕</span></div><div class="chat-text">${escapeHtml(m.text)}</div><div class="chat-time">${new Date(m.timestamp).toLocaleTimeString()}</div></div>`).join(''); container.scrollTop = container.scrollHeight; }
+let chatMessages = []; db.ref('chatMessages').orderByChild('timestamp').limitToLast(100).on('value', (snapshot) => { const data = snapshot.val(); if(data) { let msgsArray = Object.entries(data).map(([k,v])=>({...v, firebaseId:k})); msgsArray.sort((a,b)=>a.timestamp-b.timestamp); chatMessages = msgsArray; renderChat(); } });
+function copyBonusCode(element) { const code = element.getAttribute('data-code'); navigator.clipboard.writeText(code); element.classList.add('copied'); const originalText = element.innerHTML; element.innerHTML = '✓ COPIED!'; setTimeout(() => { element.classList.remove('copied'); element.innerHTML = originalText; }, 1000); }
+function joinTelegramChannel(){ window.open('https://t.me/redpacket_box', '_blank'); }
+
+document.getElementById('inviteNowBtn')?.addEventListener('click',inviteFriendAction);
+updateStreakAndLogin(); updateInviteUI(); updateSpinUI(); updateProfileUI(); updateStarsUI(); updateMsgProgressUI();
+
+setTimeout(()=>{ let loader=document.getElementById('loader-wrapper'); if(loader){loader.classList.add('hidden');setTimeout(()=>loader.style.display='none',100);} },300);
 </script>
 </body>
 </html>
